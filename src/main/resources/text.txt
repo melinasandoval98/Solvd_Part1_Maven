@@ -1,0 +1,357 @@
+Review of 'Wittgenstein and the End of Philosophy-- Neither Theory nor Therapy' by Daniel Hutto 2nd ed (2006)
+Michael Starks
+ ABSTRACT
+One of the leading exponents of W's ideas on the language games of inner and outer (the `Two Selves' operation of
+our personality or intentionality or EP etc.) is the prolific Daniel Hutto (DH). His approach is called `Radical
+Enactivism' and is well explained in numerous recent books and papers (see my review of Radicalizing Enactivism)
+and a new one is appearing as I write (Evolving Enactivism). It is a development of or version of the Embodied Mind
+ideas now current and, cleansed of its jargon, it is a straightforward extension of W's 2nd and 3rd period writings
+(though Hutto seems only intermittently aware of this).
+Unfortunately in 2006 Hutto had not yet arrived at his Radical Enactivism, so much time is wasted on McDowell
+and Brandom and of course none of them to this day have totally digested the later W and his prescient analysis of
+automatic behavior-so fully in tune with contemporary research. Nor is there any discussion of Searle's
+groundbreaking and completely Wittgensteinian (unwittingly) disquisitions on the Construction of Social Reality.
+Thus his chapters 5 and 6 on Realism and Idealism etc., though superb for 2002, need a complete rewrite from a
+modern two systems viewpoint and I provide a start on that in my review. Much time is wasted on Davidson and
+Williams, etc. but one can endure them for Hutto's brilliant analyses and the frequent quotes from W. The last
+chapter gives his critic Rupert Read the counterblast he deserves and permits a slight update to 2006. Overall a
+lovely book and I eagerly await the third edition which I hope will ensue.
+Those wishing a comprehensive up to date framework for human behavior from the modern two systems view
+may consult my article The Logical Structure of Philosophy, Psychology, Mind and Language as Revealed in
+Wittgenstein and Searle 59p(2016). For all my articles on Wittgenstein and Searle see my e-book ‘The Logical
+Structure of Philosophy, Psychology, Mind and Language in Wittgenstein and Searle 367p (2016). Those
+interested in all my writings in their most recent versions may consult my e-book Philosophy, Human Nature
+and the Collapse of Civilization - Articles and Reviews 2006-2016 662p (2016).
+“ But I did not get my picture of the world by satisfying myself of its correctness: nor do I have it because I am
+satisfied of its correctness. No: it is the inherited background against which I distinguish between true and
+false.”OC 94
+“Superstition is nothing but belief in the causal nexus.” TLP 5.1361
+"Now if it is not the causal connections which we are concerned with, then the activities of the mind lie open
+before us." "The Blue Book” p6 (1933)
+“What we are ‘tempted to say’ in such as case is, of course, not philosophy, but it is its raw material.
+Thus, for example, what a mathematician is inclined to say about the objectivity and reality of mathematical
+2
+facts, is not a philosophy of mathematics, but something for philosophical treatment.” PI 234
+“We feel that even when all possible scientific questions have been answered, the problems of life remain
+completely untouched. Of course, there are then no questions left, and this itself is the answer.” TLP 6.52
+(1922)
+“Nonsense, Nonsense, because you are making assumptions instead of simply describing. If your head is
+haunted by explanations here, you are neglecting to remind yourself of the most important facts.”
+Z 220
+“Philosophy simply puts everything before us and neither explains nor deduces anything…One might give the
+name ‘philosophy’ to what is possible before all new discoveries and inventions.” PI 126
+“The more narrowly we examine actual language, the sharper becomes the conflict between it and our
+requirement. (For the crystalline purity of logic was, of course, not a result of investigation: it was a
+requirement.)”PI 107
+“The wrong conception which I want to object to in this connexion is the following, that we can discover
+something wholly new. That is a mistake. The truth of the matter is that we have already got everything, and
+that we have got it actually present; we need not wait for anything. We make our moves in the realm of the
+grammar of our ordinary language, and this grammar is already there. Thus, we have already got everything
+and need not wait for the future.” (said in 1930) Waismann “Ludwig Wittgenstein and the Vienna Circle
+(1979)p183
+“Here we come up against a remarkable and characteristic phenomenon in philosophical investigation: the
+difficulty---I might say---is not that of finding the solution but rather that of recognizing as the solution
+something that looks as if it were only a preliminary to it. We have already said everything.---Not anything that
+follows from this, no this itself is the solution!….This is connected, I believe, with our wrongly expecting an
+explanation, whereas the solution of the difficulty is a description, if we give it the right place in our
+considerations. If we dwell upon it, and do not try to get beyond it.” Zettel p312-314
+“Our mistake is to look for an explanation where we ought to look at what happens as a ‘proto-phenomenon’.
+That is, where we ought to have said: this language game is played.” PI 654
+“What we are supplying are really remarks on the natural history of man, not curiosities; however, but rather
+observations on facts which no one has doubted and which have only gone unremarked because they are
+always before our eyes.” RFM I p142
+“Here the temptation is overwhelming to say something further, when everything has been described-Whence
+this pressure? What analogy, what wrong interpretation produces it?” Z 313
+“The aim of philosophy is to erect a wall at the point where language stops anyway.” Philosophical Occasions
+p187
+“The limit of language is shown by its being impossible to describe a fact which corresponds to (is the translation
+of) a sentence without simply repeating the sentence (this has to do with the Kantian solution to the problem of
+philosophy).” CV p10(1931)
+3
+(THESE QUOTES ARE NOT SELECTED AT RANDOM AND EACH MAKES A PROFOUND POINT)
+When thinking about Wittgenstein, I often recall the comment attributed to Cambridge Philosophy professor C.D.
+Broad (who did not understand nor like him). “Not offering the chair of philosophy to Wittgenstein would be like
+not offering the chair of physics to Einstein!" I think of him as the Einstein of intuitive psychology. Though born ten
+years later, he was likewise hatching ideas about the nature of reality at nearly the same time and in the same part
+of the world and like Einstein nearly died in WW1. Now suppose Einstein was a suicidal homosexual recluse with a
+difficult personality who published only one early version of his ideas that were confused and often mistaken, but
+became world famous; completely changed his ideas but for the next 30 years published nothing more, and
+knowledge of his new work, in mostly garbled form, diffused slowly from occasional lectures and students notes;
+that he died in 1951 leaving behind over 20,000 pages of mostly handwritten scribblings in German, composed of
+sentences or short paragraphs with, often, no clear relationship to sentences before or after; that these were cut
+and pasted from other notebooks written years earlier with notes in the margins, underlinings and crossed out
+words, so that many sentences have multiple variants; that his literary executives cut this indigestible mass into
+pieces, leaving out what they wished and struggling with the monstrous task of capturing the correct meaning of
+sentences which were conveying utterly novel views of how the universe works and that they then published this
+material with agonizing slowness (not finished after half a century) with prefaces that contained no real
+explanation of what it was about; that he became as much notorious as famous due to many statements that all
+previous physics was a mistake and even nonsense, and that virtually nobody understood his work, in spite of
+hundreds of books and tens of thousands of papers discussing it; that many physicists knew only his early work in
+which he had made a definitive summation of Newtonian physics stated in such extremely abstract and condensed
+form that it was difficult to decide what was being said; that he was then virtually forgotten and that most books
+and articles on the nature of the world and the diverse topics of modern physics had only passing and usually
+erroneous references to him, and that many omitted him entirely; that to this day, over half a century after his
+death, there were only a handful of people who really grasped the monumental consequences of what he had
+done. This, I claim, is precisely the situation with Wittgenstein (hereafter W).
+I will first give my view of W as it relates to a contemporary two systems view and then some specific comments
+on Hutto’s book.
+W’s first book, the famous Tractatus (1922) was the only one published during his lifetime and is such an amazingly
+powerful statement of (mostly) the mechanical version of mind that it continues to attract some of the best minds
+to this day (see my other reviews for details). He later totally rejected it and his philosophy evolved into the most
+powerful dissection of behavior ever done. His next book, Philosophical Investigations (PI) was not published until
+1953, 2 years after his death, and can be viewed as two quite different books. Part one is from his middle or W2
+period and Part two is from his final or W3 period (which overlaps extensively with his books LWPP1 and 2), when
+his ideas crystallized into a unique and amazingly deep and prescient description of behavior not yet fully
+appreciated by even his most ardent admirers. Although W wrote thousands of pages and is the most discussed
+philosopher in modern times, only a few have any real grasp of what he did and how it anticipates in detail many
+of the latest advances in psychology and philosophy (descriptive psychology). It is essential to first read some of
+the commentaries on his work by others. One of the best is that of Daniele Moyal-Sharrock (DMS) whose 2004
+volume “Understanding Wittgenstein’s On Certainty” is mandatory for every educated person, and perhaps the
+best starting point for understanding Wittgenstein, psychology, philosophy and life, since it explains the
+unconscious, axiomatic structure of animal behavior. Next I would suggest the writings of Daniel Hutto, especially
+his “Wittgenstein and the End of Philosophy” (2004). However (in my view) like all analyses, they fall far short of
+grasping his unique and revolutionary advances in describing behavior by failing to put them in a broad
+4
+evolutionary and contemporary scientific context, which I will attempt in skeletal outline here. Finally, all of Searle
+should be read, with special attention to “Rationality in Action” and his more recent works. Though Searle does not
+say and seems to be unaware, most of his work follows directly from that of W, even though he often criticizes him
+or “damns with faint praise”.
+To say that Searle has carried on W’s work is not to say that it is a direct result of W study, but rather that because
+there is only ONE human psychology (for the same reason there is only ONE human cardiology), that anyone
+accurately describing behavior must be voicing some variant or extension of what W said. I find most of Searle
+foreshadowed in W, including versions of the famous Chinese room argument against Strong AI. Incidentally, if the
+Chinese Room interests you then you should read Victor Rodych’s xlnt ,but virtually unknown, supplement on the
+CR—“Searle Freed of Every Flaw”. Rodych has also written a series of superb papers on W’s philosophy of
+mathematics --i.e., the EP (Evolutionary Psychology) of the axiomatic System 1 ability of counting up to 3, as
+extended into the endless System 2 SLG’s (Secondary Language Games) of math. I will also note that nobody who
+promotes Strong AI and CTM (Computational Theory of Mind), now more or less superseded by its clone Dynamic
+Systems Theory, seems to be aware that W’s Tractatus is the most striking and powerful statement of their
+viewpoint ever penned (i.e., behavior (thinking) as the logical processing of facts—i.e., information processing). Of
+course later (but before the digital computer was a gleam in Turing’s eye) he described in great detail why CTM
+was an incoherent description of mind that must be replaced by psychology (or you can say this is all he did for the
+rest of his life).
+Wittgenstein (W) is for me easily the most brilliant thinker on human behavior of all time and PI is his most famous
+work. His work as a whole shows that all behavior is an extension of innate true-only axioms (see his “On
+Certainty” for his final extended treatment of this idea-and my review thereof for preparation) and that our
+conscious ratiocination emerges from unconscious machinations. His corpus can be seen as the foundation for all
+description of animal behavior, revealing how the mind works and indeed must work. The “must” is entailed by the
+fact that all brains share a common ancestry and common genes and so there is only one basic way they work, that
+this necessarily has an axiomatic structure, that all higher animals share the same evolved psychology based on
+inclusive fitness, and that in humans this is extended into a personality based on throat muscle contractions
+(language) that evolved to manipulate others (with variations that can be regarded as trivial). This book, and
+arguably all of W’s work and all useful discussion of behavior, is a development of or variation on these ideas.
+Another major theme here, and of course in all discussion of human behavior, is the need to separate the
+automatisms which underlie all behavior from the effects of culture. Though few philosophers, psychologists,
+anthropologists, sociologists etc., explicitly discuss this, it can be seen as the major problem they are dealing with.
+I suggest it will prove of the greatest value to consider W’s work and most of his examples as an effort to tease
+apart not only fast and slow thinking (e.g., perceptions vs dispositions--see below), but nature and nurture.
+In the course of many years reading extensively in W, other philosophers, and psychology, it has become clear that
+what he laid out in his final period (and throughout his earlier work in a less clear way) are the foundations of what
+is now known as evolutionary psychology (EP), or if you prefer, psychology, cognitive linguistics, intentionality,
+higher order thought or just animal behavior. Sadly, almost nobody seems to realize that his works are a vast and
+unique textbook of descriptive psychology that is as relevant now as the day it was written. He is almost
+universally ignored by psychology and other behavioral sciences and humanities, and even those few in philosophy
+who have more or less understood him, have not carried the analysis to its logical (psychological) conclusion, nor
+realized the extent of his anticipation of the latest work on EP and cognitive illusions (Theory of Mind, framing, the
+two selves of fast and slow thinking etc.,—see below).
+5
+I eventually came to understand much of W by regarding his corpus as the pioneering effort in EP, seeing that he
+was describing the two selves and the multifarious language games of fast and slow thinking, and by starting from
+his 3rd period works and reading backwards to the proto-Tractatus. It has been extremely revealing to alternate W
+with the writings of hundreds of other philosophers and evolutionary psychologists (as I regard all psychologists
+and in fact all behavioral scientists, cognitive linguists and others). It should also be clear that insofar as they are
+coherent and correct, all accounts of behavior are describing the same phenomena and ought to translate easily
+into one another. Thus the recently fashionable themes of “Embodied Mind” and “Radical Enactivism” should flow
+directly from and into W’s work. However almost nobody is able to follow his example of avoiding jargon and
+sticking to perspicuous examples, so even the redoubtable Hutto (see below) has to be heavily filtered to see that
+this is true, and even he does not get how completely W has anticipated the latest work in fast and slow, two-self
+embodied thinking (acting).
+W can also be regarded as a pioneer in evolutionary cognitive linguistics—the Top Down analysis of the mind and
+its evolution via the careful analysis of examples of language use in context, by exposing the many varieties of
+language games and the relationships between the primary games of the true-only unconscious, pre or
+protolinguistic axiomatic fast thinking of perception, memory and reflexive emotions and acts (often described as
+the subcortical and primitive cortical reptilian brain first-self, mirror neuron functions), and the later evolved
+higher cortical dispositional linguistic conscious abilities of believing, knowing, thinking etc. that constitute the true
+or false propositional secondary language games of slow thinking that are the network of cognitive illusions that
+constitute the second-self personality. He dissects hundreds of language games showing how the true-only
+perceptions, memories and reflexive actions of system one grade into the thinking, remembering, and
+understanding of system two dispositions, and many of his examples also address the nature/nurture issue
+explicitly. With this evolutionary perspective, his later works are a breathtaking revelation of human nature that is
+entirely current and has never been equaled. Many perspectives have heuristic value, but I find that this
+evolutionary two systems view not only lets me understand W, but cuts like a hot knife through the frozen butter
+of all discussions of behavior. To repeat Dobzhansky’s famous comment: “Nothing in biology makes sense except
+in the light of evolution.” And nothing in philosophy makes sense except in the light of evolutionary psychology.
+The failure (in my view) of even the best thinkers (with a few possible exceptions) to fully grasp W’s significance is
+partly due to the limited attention “On Certainty” (OC) and his other 3rd period works have received, but even
+more to the inability to understand how profoundly our view of philosophy, anthropology, sociology, linguistics,
+politics, law, morals, ethics, religion, aesthetics, literature (all of them being descriptive psychology), alters once
+we accept this evolutionary point of view. The dead hand of the blank slate view of behavior still rests heavily on
+most people, pro or amateur and is the default of the second self of slow thinking conscious System 2,(which is
+oblivious to the fact that the groundwork for all behavior lies in the unconscious, fast thinking axiomatic structure
+of System 1). System 1 is more or less equivalent to “mirroring”(Goldman), “neural resonance”(Gallagher),
+“biosemantics”(Millikan), and “biosemiotics”(Hutto). Steven Pinker’s brilliant ‘The Blank Slate: the modern denial
+of human nature’ is highly recommended preparation, even though it is now dated and limited in various ways,
+and he has no clue about Wittgenstein, and hence of what can be regarded as the first and best really deep
+investigation into the foundations of human nature. Also, he seems not to grasp that the Blank Slate view is an
+expression of the cognitive illusions that constitute our mental life.
+The common ideas (e.g., the subtitle of one of Pinker’s books “The Stuff of Thought: language as a window into
+human nature”) that language is a window on or some sort of translation of our thinking or even (Fodor) that
+there must be some other “Language of Thought” of which it is a translation, were rejected by W, who tried to
+show, with hundreds of continually reanalyzed perspicacious examples of language in action, that language is the
+best picture we can ever get of thinking, the mind and human nature, and his whole corpus can be regarded as the
+6
+development of this idea. He rejected the idea that the Bottom Up approaches of physiology, experimental
+psychology and computation (now we say Computational Theory of Mind, Strong AI, Dynamic Systems Theory,
+etc.) could reveal what his Top Down deconstructions of Language Games (LG’s) did. The principal difficulties he
+noted are to understand what is always in front of our eyes and to capture vagueness (“The greatest difficulty in
+these investigations is to find a way of representing vagueness” LWPP1, 347). And so, speech (i.e., oral muscle
+contractions, the principal way we can interact) is not a window into the mind but is the mind itself, which is
+expressed by acoustic blasts about past, present and future acts (i.e., our speech using the later evolved Secondary
+Language Games (SLG’s) of the Second Self--the dispositions --imagining, knowing, meaning, believing, intending
+etc.). As with his other aphorisms I suggest one should take seriously his comment that even if God could look into
+our mind he could not see what we are thinking—this should be the motto of the Embodied Mind. (But He could
+see what we are perceiving since perceptions, unlike thoughts, are mental states—this is not a theory but a fact
+about our grammar).
+Some of W’s favorite topics in his later second and his third periods are the different (but interdigitating) LG’s of
+fast and slow thinking (System 1 and 2 or roughly PLG’s and SLG’s), the epiphenomenality (and for most purposes
+the superficiality) of our second self and mental life (i.e., of our personality), the impossibility of private language
+and the axiomatic structure of all behavior. The PLG’s are utterances by and descriptions of our involuntary,
+System 1, fast thinking, mirror neuron, true only, nonpropositional, untestable mental states- our perceptions and
+memories and involuntary acts (including System 1 Truths and UOA) which can be described causally, while the
+evolutionarily later SLG’s are expressions or descriptions of voluntary, System 2, slow thinking, mentalizing neuron,
+testable true or false, propositional, Truth2 and UOA2, dispositional (and often counterfactual) imagining,
+supposing, intending, thinking, knowing, believing etc which can only be described in terms of reasons.
+A useful heuristic is to separate behavior and experience into Intentionality 1 and Intentionality 2 (e.g., Thinking 1
+and Thinking 2, Emotions 1 and Emotions 2 etc.) and even into Truths 1 (T only axioms) and Truths 2 (empirical
+extensions or “Theorems” which result from the logical extension of Truths 1). He recognized that ‘Nothing is
+Hidden’—i.e., our whole psychology and all the answers to all philosophical questions are here in our language
+(our life) and that the difficulty is not to find the answers but to recognize them as always here in front of us—we
+just have to stop trying to look deeper (e.g., “The greatest danger here is wanting to observe oneself.” LWPP1,
+459).
+W makes these points throughout his works in countless examples and again his whole corpus can be regarded as
+the effort to make them clear. After all, what exactly is the alternative? W showed over and over that standard
+ways of describing behavior (i.e., most of philosophy, and much of descriptive psychology, anthropology, sociology,
+economics, etc.) are either demonstrably false or incoherent. Once we understand W, we realize the absurdity of
+regarding “language philosophy” as a separate study apart from other areas of behavior, since language is just
+another name for the mind. And, when W says (as he does many times) that understanding behavior is in no way
+dependent on the progress of psychology (e.g., his oft-quoted assertion “The confusion and barrenness of
+psychology is not to be explained by calling it a ‘young science’ --but cf. another comment that I have never seen
+quoted “Is scientific progress useful to philosophy? Certainly. The realities that are discovered lighten the
+philosophers task. Imagining possibilities.” (LWPP1, 807). So, he is not legislating the boundaries of science but
+pointing out that our behavior (mostly speech) is the clearest picture possible of our psychology and that all
+discussions of higher order behavior are plagued (as they are to this day) by conceptual confusions.
+FMRI, PET, TCMS, iRNA, computational analogs, AI and all the rest are fascinating and powerful ways to extend our
+innate axiomatic psychology, but all they can do is provide the physical basis for our behavior, facilitate our
+analysis of language games, and extend our EP, which, like all of reality, remains ultimately unexplainable and
+unchanged (unless genetic engineering is unleashed to change our EP—but then it won’t be us anymore). The trueonly axioms, most thoroughly explored in ‘’On Certainty’’, are W’s (and later Searle’s) “bedrock” or “background”,
+7
+which we now call evolutionary psychology (EP), and which are traceable to the automated true-only reactions of
+bacteria, which evolved and operate by the mechanism of inclusive fitness (IF). See the recent works of Trivers and
+others for a popular intro to IF or Bourke’s superb “Principles of Social Evolution” for a pro intro.
+Beginning with their innate true-only, nonempirical (automated and nonchangeable) responses to the world,
+animals extend their axiomatic understanding via deductions into further true only understandings (“theorems” as
+we might call them, but of course like many words, this is a complex language game even in the context of
+mathematics). Tyrannosaurs and mesons become as unchallengeable as the existence of our two hands or our
+breathing. This dramatically changes ones view of human nature. Theory of Mind (TOM) is not a theory at all but a
+group of true-only Understandings of Agency (UOA a term I devised 10 years ago) which newborn animals
+(including flies and worms if UOA is suitably defined) have and subsequently extend greatly (in higher eukaryotes).
+However as I note here W made it very clear that for much of intentionality there are System 1 and System 2
+versions (language games)-the fast unconscious UOA1 and the Slow conscious UOA2 and of course these are
+multifaceted phenomena.
+Likewise the Theory of Evolution ceased to be a theory for any normal, rational, intelligent person before the end
+of the 19th century and for Darwin at least half a century earlier. One CANNOT help but incorporate T. rex and all
+that is relevant to it into our innate background via the inexorable workings of EP. Once one gets the logical
+(psychological) necessity of this it is truly stupefying that even the brightest and the best seem not to grasp this
+most basic fact of human life (with a tip of the hat to Kant, Searle and a few others) which was laid out in great
+detail in “On Certainty”. Incidentally, the equation of logic and our axiomatic psychology is essential to
+understanding W and human nature (as DMS, but afaik nobody else, points out).
+So, most of our shared public experience (culture) becomes a true-only extension of our axiomatic EP and cannot
+be found mistaken without threatening our sanity. A corollary, nicely explained by DMS and elucidated in his own
+unique manner by Searle, is that the skeptical view of the world and other minds (and a mountain of other
+nonsense including the Blank Slate) cannot really get a foothold, as “reality” is the result of involuntary fast
+thinking axioms and not testable true or false propositions.
+I think it is clear that the innate true-only axioms W is occupied with throughout his work, and almost exclusively in
+OC (his last work), are equivalent to the fast thinking or System 1 that is at the center of current research (e.g., see
+Kahneman--“Thinking Fast and Slow”, but he has no idea W laid out the framework some 75 years ago), which is
+involuntary and unconscious and which corresponds to the mental states of perception (including UOA1) and
+memory and involuntary acts, as W notes over and over in endless examples. One might call these “intracerebral
+reflexes”(maybe 99% of all our cerebration if measured by energy use in the brain). Our slow or reflective, more or
+less “conscious” (beware another network of language games!) second-self brain activity corresponds to what W
+characterized as “dispositions” or “inclinations”, which refer to abilities or possible actions, are not mental states,
+and do not have any definite time of occurrence. But disposition words like “knowing”, “understanding”,
+“thinking”, “believing”, which W discussed extensively, have at least two basic uses (or, one might say, in
+philosophical contexts, one major use and one abuse) or language games. One is a peculiar philosophical use (but
+graduating into everyday uses) exemplified by Moore (whose papers inspired W to write OC), which refers to the
+true-only sentences resulting from direct perceptions and memory, i.e., our innate axiomatic System 1 psychology
+(‘I know these are my hands’), and their normal use as dispositions, which can be acted out and which can become
+true or false (‘I know my way home’).
+The investigation of involuntary fast thinking has revolutionized psychology, economics (e.g., Kahneman’s Nobel
+prize) and other disciplines under names like “cognitive illusions”, “priming”, “framing”, “heuristics” and “biases”.
+8
+Of course these too are language games so there will be more and less useful ways to use these words, and studies
+and discussions will vary from “pure” System 1 to combinations of 1 and 2 (the norm as W made clear), but
+presumably not ever of slow System 2 dispositional thinking only, since any System 2 thought or intentional action
+cannot occur without involving much of the intricate network of “cognitive modules”, “inference engines”,
+“intracerebral reflexes”, “automatisms”, “cognitive axioms”, “background” or “bedrock” (as W and later Searle call
+our EP).
+One of W’s recurring themes was TOM, or as I prefer UOA (but of course he did not use these terms), which is the
+subject of major research efforts now. I recommend consulting the work of Ian Apperly, who is carefully dissecting
+UOA1 and 2 and who has recently become aware of Hutto, since Hutto has now characterized UOA1 as a fantasy
+(or rather insists that there is no ‘Theory’ nor representation involved in UOA1--that being reserved for UOA2).
+However, like other psychologists, Apperly has no idea W laid the groundwork for this between 60 and 80 years
+ago.
+Another point made countless times by W was that our conscious mental life is epiphenomenal in the sense that it
+does not accurately describe nor determine how we act. It is an obvious corollary of his descriptive psychology
+that it is the unconscious automatisms of System 1 that dominate and describe behavior and that the later evolved
+conscious dispositions (thinking, remembering, loving, desiring, regretting etc.) are mere icing on the cake. This is
+most strikingly borne out by the latest experimental psychology, some of which is nicely summarized by Kahneman
+in the book cited (see e.g., the chapter ‘Two Selves’, but of course there is a huge volume of recent work he does
+not cite). It is an easily defensible view that most of the burgeoning literature on cognitive illusions, automatisms
+and higher order thought is wholly compatible with and straightforwardly deducible from W.
+Throughout W’s works understanding is bedeviled by possible alternative and consequently often infelicitous
+translations from often unedited and handwritten German notes, with “Satz” being frequently incorrectly
+rendered as “proposition”(which is a testable or falsifiable statement) when referring to our nonfalsifiable
+psychological axioms, as opposed to the correct “sentence”, which CAN be applied to our axiomatic true-only
+statements such as “these are my hands” or “Tyrannosaurs were large carnivorous dinosaurs that lived about 50
+million years ago”(and since this is an unavoidable extension of our psychology, what does this imply about
+creationists?).
+Regarding my view of W as the major pioneer in EP, it seems nobody has noticed that he very clearly explained
+several times specifically and many times in passing, the psychology behind what later became known as the
+Wason Test--long a mainstay of EP research.
+Finally, let me suggest that with this perspective, W is not obscure, difficult or irrelevant but scintillating, profound
+and crystal clear, that he writes aphoristically and telegraphically because we think and behave that way, and that
+to miss him is to miss one of the greatest intellectual adventures possible.
+One of the leading exponents of W's ideas on the language games of inner and outer (the `Two Selves' operation of
+our personality or intentionality or EP etc.) is the prolific Daniel Hutto (DH). His approach is called `Radical
+Enactivism' and is well explained in numerous recent books and papers (see my review of Radicalizing Enactivism)
+and a new one is appearing as I write (Evolving Enactivism). It is a development of or version of the Embodied Mind
+ideas now current and, cleansed of its jargon, it is a straightforward extension of W's 2nd and 3rd period writings
+(though Hutto seems only intermittently aware of this). He is also author of the best deconstructions I know of
+Dennett's preposterous claim to be following in W's footsteps (in fact Dennett is just repeating most of the classic
+mistakes in grandiose fashion and hasn't a clue about W) and of Fodor's LOT and other nonsense. But of course
+one must read Searle too on all these issues and the title of his famous review of Dennett's book says it well
+9
+"Consciousness Explained Away" which also characterizes much of the writing on this topic. Incidentally, unlike
+most philosophers and other scholars, who make little or no effort to give the general public access to their
+papers, Hutto has put nearly every paper (though of course often just proofs and not the final paper) free online at
+www.academia.edu.
+Now that we have a reasonable start on the Logical Structure of Rationality (the Descriptive Psychology of Higher
+Order Thought) laid out we can look at the table of Intentionality that results from this work, which I have
+constructed over the last few years. It is based on a much simpler one from Searle, which in turn owes much to
+Wittgenstein. I have also incorporated in modified form tables being used by current researchers in the psychology
+of thinking processes which are evidenced in the last 9 rows. It should prove interesting to compare it with those in
+Peter Hacker’s 3 recent volumes on Human Nature. I offer this table as an heuristic for describing behavior that I
+find more complete and useful than any other framework I have seen and not as a final or complete analysis,
+which would have to be three dimensional with hundreds (at least) of arrows going in many directions with many
+(perhaps all) pathways between S1 and S2 being bidirectional. Also, the very distinction between S1 and S2,
+cognition and willing, perception and memory, between feeling, knowing, believing and expecting etc. are
+arbitrary--that is, as W demonstrated, all words are contextually sensitive and most have several utterly different
+uses (meanings or COS). Many complex charts have been published by scientists but I find them of minimal utility
+when thinking about behavior (as opposed to thinking about brain function). Each level of description may be
+useful in certain contexts but I find that being coarser or finer limits usefulness.
+The Logical Structure of Rationality (LSR), or the Logical Structure of Mind (LSM), the Logical Structure of Behavior
+(LSB), the Logical Structure of Thought (LST), the Logical Structure of Consciousness (LSC), the Logical Structure of
+Personality (LSP), the Descriptive Psychology of Consciousness (DSC), the Descriptive Psychology of Higher Order
+Thought (DPHOT), Intentionality-the classical philosophical term.
+System 1 is involuntary, reflexive or automated “Rules” R1 while Thinking (Cognition) has no gaps and is
+voluntary or deliberative “Rules” R2 and Willing (Volition) has 3 gaps (see Searle)
