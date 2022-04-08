@@ -5,7 +5,7 @@ import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.solvd.Maven_Project.exception.InvalidOptionInputException;
+import com.solvd.maven_project.exception.InvalidOptionInputException;
 
 public class ReadNumericOptionsFromUser {
 	public static final Logger LOGGER = LogManager.getLogger(ReadNumericOptionsFromUser.class);

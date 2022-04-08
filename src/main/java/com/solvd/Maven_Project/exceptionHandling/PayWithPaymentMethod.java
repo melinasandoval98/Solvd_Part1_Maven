@@ -3,12 +3,12 @@ package com.solvd.Maven_Project.exceptionHandling;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.solvd.Maven_Project.exception.InsufficientBalanceException;
 import com.solvd.Maven_Project.olineShopping.shopping.Cart;
 import com.solvd.Maven_Project.onlineShopping.paymentMethod.BankAccount;
 import com.solvd.Maven_Project.onlineShopping.paymentMethod.CreditCard;
 import com.solvd.Maven_Project.onlineShopping.paymentMethod.DiscountCoupon;
 import com.solvd.Maven_Project.onlineShopping.transaction.IBuy;
+import com.solvd.maven_project.exception.InsufficientBalanceException;
 
 public class PayWithPaymentMethod implements IBuy {
 	public static final Logger LOGGER = LogManager.getLogger(PayWithPaymentMethod.class);
