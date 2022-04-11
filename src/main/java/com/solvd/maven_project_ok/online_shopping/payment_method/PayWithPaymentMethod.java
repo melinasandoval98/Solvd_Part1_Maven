@@ -4,8 +4,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.solvd.maven_project_ok.exception.InsufficientBalanceException;
+import com.solvd.maven_project_ok.online_shopping.cart.Cart;
 import com.solvd.maven_project_ok.online_shopping.catalog.Computer;
-import com.solvd.maven_project_ok.online_shopping.shopping.Cart;
 import com.solvd.maven_project_ok.online_shopping.transaction.IBuy;
 
 public class PayWithPaymentMethod implements IBuy {

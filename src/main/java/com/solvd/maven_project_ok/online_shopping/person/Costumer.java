@@ -3,6 +3,7 @@ package com.solvd.maven_project_ok.online_shopping.person;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.solvd.maven_project_ok.online_shopping.cart.Cart;
 import com.solvd.maven_project_ok.online_shopping.catalog.Catalog;
 import com.solvd.maven_project_ok.online_shopping.catalog.Computer;
 import com.solvd.maven_project_ok.online_shopping.catalog.ReadNumericOptionsFromUser;
@@ -11,7 +12,6 @@ import com.solvd.maven_project_ok.online_shopping.catalog.SmartTV;
 import com.solvd.maven_project_ok.online_shopping.payment_method.BankAccount;
 import com.solvd.maven_project_ok.online_shopping.payment_method.CreditCard;
 import com.solvd.maven_project_ok.online_shopping.payment_method.DiscountCoupon;
-import com.solvd.maven_project_ok.online_shopping.shopping.Cart;
 
 public class Costumer extends Person implements IConsume {
 	public static final Logger LOGGER = LogManager.getLogger(Catalog.class);

@@ -3,6 +3,7 @@ package com.solvd.maven_project_ok.online_shopping.transaction;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.solvd.maven_project_ok.online_shopping.cart.Cart;
 import com.solvd.maven_project_ok.online_shopping.catalog.Catalog;
 import com.solvd.maven_project_ok.online_shopping.catalog.Computer;
 import com.solvd.maven_project_ok.online_shopping.catalog.Product;
@@ -11,7 +12,6 @@ import com.solvd.maven_project_ok.online_shopping.catalog.SmartPhone;
 import com.solvd.maven_project_ok.online_shopping.catalog.SmartTV;
 import com.solvd.maven_project_ok.online_shopping.payment_method.PayWithPaymentMethod;
 import com.solvd.maven_project_ok.online_shopping.payment_method.PaymentMethods;
-import com.solvd.maven_project_ok.online_shopping.shopping.Cart;
 
 public class Transaction implements ISell {
 	public static final Logger LOGGER = LogManager.getLogger(Transaction.class);

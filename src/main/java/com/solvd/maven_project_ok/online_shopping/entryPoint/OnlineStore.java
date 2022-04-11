@@ -1,5 +1,6 @@
 package com.solvd.maven_project_ok.online_shopping.entryPoint;
 
+import com.solvd.maven_project_ok.online_shopping.cart.Cart;
 import com.solvd.maven_project_ok.online_shopping.catalog.Catalog;
 import com.solvd.maven_project_ok.online_shopping.catalog.Computer;
 import com.solvd.maven_project_ok.online_shopping.catalog.SmartPhone;
@@ -9,7 +10,6 @@ import com.solvd.maven_project_ok.online_shopping.person.Administrator;
 import com.solvd.maven_project_ok.online_shopping.person.Costumer;
 import com.solvd.maven_project_ok.online_shopping.person.UserAccount;
 import com.solvd.maven_project_ok.online_shopping.person.UserActions;
-import com.solvd.maven_project_ok.online_shopping.shopping.Cart;
 import com.solvd.maven_project_ok.online_shopping.transaction.Transaction;
 
 //Entry Point

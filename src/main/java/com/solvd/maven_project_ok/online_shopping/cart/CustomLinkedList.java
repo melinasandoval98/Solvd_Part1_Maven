@@ -1,4 +1,4 @@
-package com.solvd.maven_project_ok.online_shopping.shopping;
+package com.solvd.maven_project_ok.online_shopping.cart;
 
 import java.util.Iterator;
 
