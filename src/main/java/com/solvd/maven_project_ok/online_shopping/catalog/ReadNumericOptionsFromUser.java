@@ -1,36 +1,31 @@
-package com.solvd.Maven_Project.exceptionHandling;
+package com.solvd.maven_project_ok.online_shopping.catalog;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import com.solvd.maven_project.exception.InvalidOptionInputException;
+import com.solvd.maven_project_ok.exception.InvalidOptionInputException;
 
 public class ReadNumericOptionsFromUser {
 	public static final Logger LOGGER = LogManager.getLogger(ReadNumericOptionsFromUser.class);
 
-	private void readOptionFromUser(Integer option, Integer maxOptionExpected) throws InvalidOptionInputException {
+	private int readOptionFromUser(int maxOptionExpected) throws InvalidOptionInputException {
+		int option;
 		try (Scanner sn = new Scanner(System.in)) {
-			option =  sn.nextInt();
+			option = sn.nextInt();
 			if (option < 1 || option > maxOptionExpected) {
 				throw new InvalidOptionInputException();
 			}
 		}
+		return option;
 	}
 
-	private void logErrorReadNumericOption(Exception e) {
-		LOGGER.error(e);
-		LOGGER.info("Invalid option entered, please try again");
-	}
-
-	public void optionFromUser(Integer option, Integer maxOptionExpected) {
+	public int optionFromUser(int maxOptionExpected) {
 		while (true) {
 			try {
-				readOptionFromUser(option, maxOptionExpected);
-				break;
+				return readOptionFromUser(maxOptionExpected);
 			} catch (InvalidOptionInputException | InputMismatchException e) {
-				logErrorReadNumericOption(e);
+				LOGGER.error("Invalid option entered, please try again",e);
 				continue;
 			}
 		}

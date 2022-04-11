@@ -1,4 +1,4 @@
-package com.solvd.Maven_Project.onlineShopping.paymentMethod;
+package com.solvd.maven_project_ok.online_shopping.payment_method;
 
 public class CreditCard extends PaymentMethod {
 	private long creditCardNumber;

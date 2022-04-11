@@ -10,34 +10,40 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class UniqueWordCounter {
 	public static final Logger LOGGER = LogManager.getLogger(UniqueWordCounter.class);
 	private static final String SOURCE_FILE_NAME = "text.txt";
 	private static final String NEW_FILE_NAME = "mapOfUniqueWordsInTextFile.txt";
-	private static String allCharactersInTheTextFile;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		String path = System.getProperty("user.dir") + "/src/main/resources/";
-		readLinesFromFile(SOURCE_FILE_NAME, path);
+		readLinesFromFileToString(SOURCE_FILE_NAME, path);
 		Pattern pattern = Pattern.compile("[^[a-zA-Z]]", Pattern.CASE_INSENSITIVE);
-		Matcher matcher = pattern.matcher(allCharactersInTheTextFile);
+		Matcher matcher = pattern.matcher(readLinesFromFileToString(SOURCE_FILE_NAME, path));
 		String string = matcher.replaceAll(" ");
 		Set<String> setOfStrings = new HashSet<>();
 		for (String word : string.split(" ")) {
-			setOfStrings.add(word);
+			if (word.length() > 1 || "a".equalsIgnoreCase(word) || "I".equalsIgnoreCase(word)) {
+				setOfStrings.add(word.toLowerCase());
+			}
 		}
 		Map<String, Integer> mapOfUniqueWords = new HashMap<String, Integer>();
 		for (String uniqueWord : setOfStrings) {
-			Integer matches = StringUtils.countMatches(allCharactersInTheTextFile, uniqueWord);
+			Integer matches = StringUtils.countMatches(readLinesFromFileToString(SOURCE_FILE_NAME, path).toLowerCase(),
+					uniqueWord);
 			mapOfUniqueWords.put(uniqueWord, matches);
 		}
-		createNewFile(NEW_FILE_NAME, path, mapOfUniqueWords);
-		LOGGER.info("The text file has been created successfully");
+		for (String key : mapOfUniqueWords.keySet()) {
+			FileUtils.writeStringToFile(createNewTextFile(NEW_FILE_NAME, path),
+					key + " = " + mapOfUniqueWords.get(key).toString() + "\n", StandardCharsets.UTF_8, true);
+		}
+		LOGGER.info("The map of unique words and the number of ocurrences of each in the\n" + "text file \""
+				+ SOURCE_FILE_NAME + "\" has been stored successfully in the text file \"" + NEW_FILE_NAME
+				+ "\"\nlocated at " + path);
 	}
 
 	private static File readTextFile(String fileName, String path) throws IOException {
@@ -45,35 +51,33 @@ public class UniqueWordCounter {
 		return souceFile;
 	}
 
-	private static void logErrorIOException(Exception e) {
-		LOGGER.error(e);
-		LOGGER.info("Cannot acces to the file");
-	}
-
-	private static void readLinesFromFile(String fileName, String path) {
-		try {
-			allCharactersInTheTextFile = FileUtils.readFileToString(readTextFile(fileName, path), "UTF-8");
-		} catch (IOException e) {
-			logErrorIOException(e);
+	private static String readLinesFromFileToString(String fileName, String path) {
+		String allCharactersInTheTextFile;
+		while (true) {
+			try {
+				allCharactersInTheTextFile = FileUtils.readFileToString(readTextFile(fileName, path), "UTF-8");
+				return allCharactersInTheTextFile;
+			} catch (IOException e) {
+				LOGGER.error("A file with the specified name could not be found. Please try again.", e);
+				continue;
+			}
 		}
 	}
 
-	public static File writeTextFile(String fileName, String path) throws IOException {
+	public static File createNewFile(String fileName, String path) throws IOException {
 		File newFile = new File(path + fileName);
 		return newFile;
 	}
 
-	public static void createNewFile(String fileName, String path, Map<String, Integer> map) {
-		try (BufferedWriter bf = new BufferedWriter(new FileWriter(writeTextFile(fileName, path)))) {
-			for (String key : map.keySet()) {
-				bf.write(key + " = " + map.get(key));
-				bf.newLine();
-			}
-			bf.flush();
-			bf.close();
+	public static File createNewTextFile(String fileName, String path) {
+		while (true) {
+			try {
+				return createNewFile(fileName, path);
 
-		} catch (IOException e) {
-			logErrorIOException(e);
+			} catch (IOException e) {
+				LOGGER.error("A file with the specified name already exists. Please try again.", e);
+				continue;
+			}
 		}
 	}
 }

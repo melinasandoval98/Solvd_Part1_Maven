@@ -1,4 +1,4 @@
-package com.solvd.Maven_Project.onlineShopping.catalog;
+package com.solvd.maven_project_ok.online_shopping.catalog;
 
 import java.util.LinkedHashSet;
 
@@ -49,4 +49,10 @@ public abstract class Product {
 	public void setListOfItemsForSale(LinkedHashSet<Object> listOfItemsForSale) {
 		this.listOfItemsForSale = listOfItemsForSale;
 	}
+	@Override
+	public String toString() {
+		return "Product [brand=" + brand + ", model=" + model + ", priceInUSD=" + priceInUSD + ", availiability="
+				+ availiability + ", sizeInInchs=" + sizeInInchs + ", listOfItemsForSale=" + listOfItemsForSale + "]";
+	}
+	
 }

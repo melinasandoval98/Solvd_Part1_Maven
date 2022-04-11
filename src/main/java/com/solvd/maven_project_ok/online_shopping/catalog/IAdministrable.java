@@ -1,11 +1,17 @@
-package com.solvd.Maven_Project.onlineShopping.catalog;
+package com.solvd.maven_project_ok.online_shopping.catalog;
 
-public interface IAdministrable<T extends Product> {
+public interface IAdministrable {
 
-	public abstract void createListOfItemsForSale();
+	public abstract void addComputerToTheListOfItemsForSale(Computer computer);
 
-	public abstract void addProductToTheListOfItemsForSale(T product);
+	public abstract void addSmartPhoneToTheListOfItemsForSale(SmartPhone smartPhone);
 
-	public abstract void removeProductFromTheListOfItemsForSale(T product);
+	public abstract void addSmartTVToTheListOfItemsForSale(SmartTV smartTV);
+
+	public abstract void removeComputerFromTheListOfItemsForSale(Computer computer);
+
+	public abstract void removeSmartPhoneFromTheListOfItemsForSale(SmartPhone smartPhone);
+
+	public abstract void removeSmartTVFromTheListOfItemsForSale(SmartTV smartTV);
 
 }

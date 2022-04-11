@@ -1,4 +1,4 @@
-package com.solvd.Maven_Project.olineShopping.shopping;
+package com.solvd.maven_project_ok.online_shopping.shopping;
 
 public class Node<T> {
 

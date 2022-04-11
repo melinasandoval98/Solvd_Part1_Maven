@@ -1,6 +1,6 @@
-package com.solvd.Maven_Project.onlineShopping.paymentMethod;
+package com.solvd.maven_project_ok.online_shopping.payment_method;
 
-import com.solvd.Maven_Project.onlineShopping.person.Person;
+import com.solvd.maven_project_ok.online_shopping.person.Person;
 
 public abstract class PaymentMethod {
 	private String holderName;
@@ -34,6 +34,5 @@ public abstract class PaymentMethod {
 	public void setPaymentMethodHolder() {
 		setHolderName(Person.getName());
 		setHolderSurname(Person.getSurname());
-
 	}
 }

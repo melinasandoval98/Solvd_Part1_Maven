@@ -1,4 +1,4 @@
-package com.solvd.Maven_Project.exception;
+package com.solvd.maven_project_ok.exception;
 
 @SuppressWarnings("serial")
 public class InvalidOptionInputException extends Exception {

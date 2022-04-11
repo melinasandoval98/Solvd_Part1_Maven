@@ -1,10 +1,6 @@
-package com.solvd.Maven_Project.onlineShopping.person;
+package com.solvd.maven_project_ok.online_shopping.person;
 
 import java.util.Date;
-
-import com.solvd.Maven_Project.onlineShopping.paymentMethod.BankAccount;
-import com.solvd.Maven_Project.onlineShopping.paymentMethod.CreditCard;
-import com.solvd.Maven_Project.onlineShopping.paymentMethod.DiscountCoupon;
 
 public abstract class Person {
 	public static String name;
@@ -12,6 +8,19 @@ public abstract class Person {
 	private int iD;
 	private String adress;
 	private Date dateOfBirth = new Date();
+	private String personGender;
+
+	public String getPersonGender(Gender gender) {
+		switch (gender) {
+		case FEMALE:
+			personGender = "Female";
+		case MALE:
+			personGender = "Male";
+		default:
+			break;
+		}
+		return personGender;
+	}
 
 	public static String getName() {
 		return name;
@@ -53,15 +62,5 @@ public abstract class Person {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public void personsWallet() {
-		BankAccount bankAccount = new BankAccount((Math.round((Math.random() + 1) * Math.pow(10, 17))),
-				Math.random() * Math.pow(10, 5 * Math.random()));
-		bankAccount.setPaymentMethodHolder();
-		CreditCard creditCard = new CreditCard((Math.round((Math.random() + 1) * Math.pow(10, 15))),
-				(int) Math.round(Math.random() * 999), Math.random() * Math.pow(10, 5 * Math.random()));
-		creditCard.setPaymentMethodHolder();
-		DiscountCoupon discountCoupon = new DiscountCoupon((Math.round((Math.random() + 1) * 10000)),
-				(int) Math.round((Math.random() + 1) * 10), Math.random() * Math.pow(10, 5 * Math.random()));
-		discountCoupon.setPaymentMethodHolder();
-	}
+	public abstract void createWallet();
 }

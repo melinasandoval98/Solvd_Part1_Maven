@@ -1,12 +1,26 @@
-package com.solvd.Maven_Project.onlineShopping.person;
+package com.solvd.maven_project_ok.online_shopping.person;
 
 import java.util.Scanner;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-public class UserAccountAccess extends Costumer implements IAccessable {
-	public static final Logger LOGGER = LogManager.getLogger(UserAccountAccess.class);
+public class UserAccount extends Costumer implements IAccessable {
+	public static final Logger LOGGER = LogManager.getLogger(UserAccount.class);
+
+	public void accountAction(UserActions action) {
+		switch (action) {
+		case LOG_IN:
+			logIn();
+			break;
+		case LOG_OUT:
+			logOut();
+			break;
+		case SING_IN:
+			createAccount();
+			break;
+		}
+	}
 
 	@Override
 	public void createAccount() {

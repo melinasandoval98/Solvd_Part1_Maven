@@ -1,4 +1,4 @@
-package com.solvd.Maven_Project.onlineShopping.catalog;
+package com.solvd.maven_project_ok.online_shopping.catalog;
 
 public class SmartPhone extends Product {
 	private int ramMemoryInGB;

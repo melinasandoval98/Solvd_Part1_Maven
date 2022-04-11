@@ -1,58 +1,55 @@
-package com.solvd.Maven_Project.onlineShopping.person;
+package com.solvd.maven_project_ok.online_shopping.person;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.solvd.Maven_Project.exceptionHandling.ReadNumericOptionsFromUser;
-import com.solvd.Maven_Project.onlineShopping.catalog.Catalog;
-import com.solvd.Maven_Project.onlineShopping.catalog.Computer;
-import com.solvd.Maven_Project.onlineShopping.catalog.Product;
-import com.solvd.Maven_Project.onlineShopping.catalog.SmartPhone;
-import com.solvd.Maven_Project.onlineShopping.catalog.SmartTV;
+import com.solvd.maven_project_ok.online_shopping.catalog.Catalog;
+import com.solvd.maven_project_ok.online_shopping.catalog.Computer;
+import com.solvd.maven_project_ok.online_shopping.catalog.IAdministrable;
+import com.solvd.maven_project_ok.online_shopping.catalog.ReadNumericOptionsFromUser;
+import com.solvd.maven_project_ok.online_shopping.catalog.SmartPhone;
+import com.solvd.maven_project_ok.online_shopping.catalog.SmartTV;
 
-public class Administrator {
+public class Administrator implements IAdministrable {
 	public static final Logger LOGGER = LogManager.getLogger(Catalog.class);
-	private Integer adminRemoveProductOption;
-	private Integer adminItemRemoveOption;
 
 	Catalog catalog = new Catalog();
 	ReadNumericOptionsFromUser read = new ReadNumericOptionsFromUser();
 
-	public void removeProductFromCatalog(Integer productToRemove) {
-		switch (adminRemoveProductOption) {
-		case (1):
-			catalog.showComputersForSale();
-			read.optionFromUser(adminItemRemoveOption, catalog.getListOfComputersForSale().size());
-			catalog.removeProductFromTheListOfItemsForSale(
-					(Product) catalog.getListOfComputersForSale().toArray()[adminItemRemoveOption]);
-			break;
-		case (2):
-			read.optionFromUser(adminItemRemoveOption, catalog.getListOfSmartPhonesForSale().size());
-			catalog.removeProductFromTheListOfItemsForSale(
-					(Product) catalog.getListOfSmartPhonesForSale().toArray()[adminItemRemoveOption]);
-			break;
-		case (3):
-			read.optionFromUser(adminItemRemoveOption, catalog.getListOfSmartsTVsForSale().size());
-			catalog.removeProductFromTheListOfItemsForSale(
-					(Product) catalog.getListOfSmartsTVsForSale().toArray()[adminItemRemoveOption]);
-			break;
-		}
+	@Override
+	public void addComputerToTheListOfItemsForSale(Computer computer) {
+		catalog.getListOfComputersForSale().add(computer);
+		LOGGER.info("New computer added to the catalog");
 	}
 
-	public void addProductToTheCatalog(Integer adminAddProductOption) {
-		switch (adminAddProductOption) {
-		case (1):
-			Computer newComputer = new Computer();
-			catalog.addProductToTheListOfItemsForSale(newComputer);
-			break;
-		case (2):
-			SmartPhone newSmartPhone = new SmartPhone();
-			catalog.addProductToTheListOfItemsForSale(newSmartPhone);
-			break;
-		case (3):
-			SmartTV newSmartTV = new SmartTV();
-			catalog.addProductToTheListOfItemsForSale(newSmartTV);
-			break;
-		}
+	@Override
+	public void addSmartPhoneToTheListOfItemsForSale(SmartPhone smartPhone) {
+		catalog.getListOfSmartPhonesForSale().add(smartPhone);
+		LOGGER.info("New smart phone added to the catalog");
 	}
+
+	@Override
+	public void addSmartTVToTheListOfItemsForSale(SmartTV smartTV) {
+		catalog.getListOfSmartsTVsForSale().add(smartTV);
+		LOGGER.info("New smart TV added to the catalog");
+	}
+
+	@Override
+	public void removeComputerFromTheListOfItemsForSale(Computer computer) {
+		catalog.getListOfComputersForSale().remove(computer);
+		LOGGER.info("Computer removed from the catalog");
+	}
+
+	@Override
+	public void removeSmartPhoneFromTheListOfItemsForSale(SmartPhone smartPhone) {
+		catalog.getListOfSmartPhonesForSale().remove(smartPhone);
+		LOGGER.info("Smart Phone removed from the catalog");
+	}
+
+	@Override
+	public void removeSmartTVFromTheListOfItemsForSale(SmartTV smartTV) {
+		catalog.getListOfSmartsTVsForSale().remove(smartTV);
+		LOGGER.info("Smart TV removed from the catalog");
+	}
+
 }

@@ -1,7 +1,18 @@
-package com.solvd.Maven_Project.olineShopping.shopping;
+package com.solvd.maven_project_ok.online_shopping.shopping;
 
-public class CustomLinkedList<T> {
+import java.util.Iterator;
+
+public class CustomLinkedList<T> implements Iterable<T> {
 	private Node<T> head;
+	private int size = 1;
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
 
 	public void insert(T data) {
 		Node<T> newNode = new Node<T>(data);
@@ -14,6 +25,7 @@ public class CustomLinkedList<T> {
 			}
 			currentNode.setNextNode(newNode);
 		}
+		size++;
 	}
 
 	public void insertHead(T data) {
@@ -38,6 +50,12 @@ public class CustomLinkedList<T> {
 			node = node.getNextNode();
 		}
 		node.setNextNode(node.getNextNode().getNextNode());
+	}
+
+	@Override
+	public Iterator iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.solvd.Maven_Project.onlineShopping.person;
+package com.solvd.maven_project_ok.online_shopping.person;
 
 public interface IAccessable {
 
