@@ -1,5 +1,7 @@
 package com.solvd.maven_project_ok.online_shopping.person;
 
+import java.util.HashMap;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,6 +14,15 @@ import com.solvd.maven_project_ok.online_shopping.catalog.SmartTV;
 
 public class Administrator implements IAdministrable {
 	public static final Logger LOGGER = LogManager.getLogger(Catalog.class);
+	private HashMap<String, Integer> mapOfUserNamesAndPasswords = new HashMap<String, Integer>();
+
+	public HashMap<String, Integer> getMapOfUserNamesAndPasswords() {
+		return mapOfUserNamesAndPasswords;
+	}
+
+	public void setMapOfUserNamesAndPasswords(HashMap<String, Integer> mapOfUserNamesAndPasswords) {
+		this.mapOfUserNamesAndPasswords = mapOfUserNamesAndPasswords;
+	}
 
 	Catalog catalog = new Catalog();
 	ReadNumericOptionsFromUser read = new ReadNumericOptionsFromUser();
@@ -50,6 +61,10 @@ public class Administrator implements IAdministrable {
 	public void removeSmartTVFromTheListOfItemsForSale(SmartTV smartTV) {
 		catalog.getListOfSmartsTVsForSale().remove(smartTV);
 		LOGGER.info("Smart TV removed from the catalog");
+	}
+
+	public void createMapOfUserAccounts(UserAccount userAccount) {
+		mapOfUserNamesAndPasswords.put(userAccount.getUserName(), userAccount.getPassword().hashCode());
 	}
 
 }

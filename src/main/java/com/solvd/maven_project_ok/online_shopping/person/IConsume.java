@@ -12,10 +12,10 @@ public interface IConsume {
 
 	public abstract void addSmartTVToTheCart(SmartTV smartTV);
 
-	public abstract void removeComputerFromTheCart(int removeOption);
+	public abstract void removeComputerFromTheCart(Computer computer);
 
-	public abstract void removeSmartPhoneFromTheCart(int removeOption);
+	public abstract void removeSmartPhoneFromTheCart(SmartPhone smartPhone);
 
-	public abstract void removeSmartTVFromTheTheCart(int removeOption);
+	public abstract void removeSmartTVFromTheTheCart(SmartTV smartTV);
 
 }

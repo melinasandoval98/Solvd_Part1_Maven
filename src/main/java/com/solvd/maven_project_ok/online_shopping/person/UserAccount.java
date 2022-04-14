@@ -1,71 +1,58 @@
 package com.solvd.maven_project_ok.online_shopping.person;
 
-import java.util.Scanner;
-
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-public class UserAccount extends Costumer implements IAccessable {
+public class UserAccount implements IAccessable {
 	public static final Logger LOGGER = LogManager.getLogger(UserAccount.class);
+	private String userName;
+	private String password;
+	private boolean statusIn;
+	private boolean statusOut;
 
-	public void accountAction(UserActions action) {
-		switch (action) {
-		case LOG_IN:
-			logIn();
-			break;
-		case LOG_OUT:
-			logOut();
-			break;
-		case SING_IN:
-			createAccount();
-			break;
-		}
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public UserAccount(String userName, String password) {
+		this.userName = userName;
+		this.password = password;
+	}
+	
+	public UserAccount() {
+		
 	}
 
 	@Override
-	public void createAccount() {
-		try (Scanner sn = new Scanner(System.in);) {
-			LOGGER.info("Please, enter your first and last name");
-			String[] nameAndSurname = sn.nextLine().split(" ", 1);
-			setName(nameAndSurname[1]);
-			setSurname(nameAndSurname[2]);
-			LOGGER.info("Please, enter your ID number");
-			setID(sn.nextInt());
-			LOGGER.info("Please, enter your ID number");
-
+	public boolean logIn(String userName, String password) {
+		Administrator admin = new Administrator();
+		if (logOut()) {
+			IVerifyable verifayable = () -> admin.getMapOfUserNamesAndPasswords().containsKey(userName)
+					&& password.hashCode() == admin.getMapOfUserNamesAndPasswords().get(userName);
+			statusIn = verifayable.verify();
 		}
-		setUserName(getName() + Integer.toString(getID()));
-		StringBuilder strb = new StringBuilder(getSurname() + getID());
-		setPassword(strb.reverse().toString());
+		return statusIn;
 	}
 
 	@Override
-	public void logIn() {
-		Scanner sn = new Scanner(System.in);
-		LOGGER.info("Enter your username and password");
-		String user;
-		String password;
-		while (true) {
-			try {
-				user = sn.next();
-				password = sn.next();
-				if (user != getUserName() || password != getPassword()) {
-					throw new Exception();
-				}
-				break;
-			} catch (Exception e) {
-				LOGGER.info("Wrong username or password, please try again");
-				continue;
-			} finally {
-				sn.close();
-			}
+	public boolean logOut() {
+		if (statusIn) {
+			statusIn = false;
+			statusOut = true;
 		}
-	}
-
-	@Override
-	public void logOut() {
-		Person.setName(null);
-		Person.setSurname(null);
+		return statusOut;
 	}
 
 }

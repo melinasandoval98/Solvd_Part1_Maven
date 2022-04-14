@@ -53,43 +53,35 @@ public class Costumer extends Person implements IConsume {
 
 	@Override
 	public void addComputerToTheCart(Computer computer) {
-		cart.getComputersInTheCart().insert(computer);
-		LOGGER.info("Computer added to the cart");
-
+		cart.getComputersInTheCart().add(computer);
 	}
 
 	@Override
 	public void addSmartPhoneToTheCart(SmartPhone smartPhone) {
-		cart.getSmartPhonesInTheCart().insert(smartPhone);
-		LOGGER.info("Smart Phone added to the cart");
-
+		cart.getSmartPhonesInTheCart().add(smartPhone);
 	}
 
 	@Override
 	public void addSmartTVToTheCart(SmartTV smartTV) {
-		cart.getSmartTVsInTheCart().insert(smartTV);
-		LOGGER.info("Smart TV added to the cart");
-
+		cart.getSmartTVsInTheCart().add(smartTV);
 	}
 
 	@Override
-	public void removeComputerFromTheCart(int removeOption) {
-		cart.getComputersInTheCart().delete(read.optionFromUser(cart.getComputersInTheCart().getSize()));
+	public void removeComputerFromTheCart(Computer computer) {
+		cart.getComputersInTheCart().remove(computer);
 		LOGGER.info("Computer removed from the cart");
 
 	}
 
 	@Override
-	public void removeSmartPhoneFromTheCart(int removeOption) {
-		cart.getSmartPhonesInTheCart().delete(read.optionFromUser(cart.getSmartPhonesInTheCart().getSize()));
+	public void removeSmartPhoneFromTheCart(SmartPhone smartPhone) {
+		cart.getSmartPhonesInTheCart().remove(smartPhone);
 		LOGGER.info("Smart Phone removed from the cart");
 
 	}
 
 	@Override
-	public void removeSmartTVFromTheTheCart(int removeOption) {
-		cart.getSmartTVsInTheCart().delete(read.optionFromUser(cart.getSmartTVsInTheCart().getSize()));
-		LOGGER.info("Smart TV removed from the cart");
-
+	public void removeSmartTVFromTheTheCart(SmartTV smartTV) {
+		cart.getSmartTVsInTheCart().remove(smartTV);
 	}
 }

@@ -25,7 +25,7 @@ public class ReadNumericOptionsFromUser {
 			try {
 				return readOptionFromUser(maxOptionExpected);
 			} catch (InvalidOptionInputException | InputMismatchException e) {
-				LOGGER.error("Invalid option entered, please try again",e);
+				LOGGER.error("Invalid option entered, please try again", e);
 				continue;
 			}
 		}

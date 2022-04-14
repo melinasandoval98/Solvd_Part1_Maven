@@ -12,10 +12,13 @@ public class PayWithPaymentMethod implements IBuy {
 	public static final Logger LOGGER = LogManager.getLogger(PayWithPaymentMethod.class);
 	Cart cart = new Cart();
 	CreditCard creditCard = new CreditCard();
+	BankAccount bankAccount = new BankAccount();
+	DiscountCoupon discountCoupon = new DiscountCoupon();
 
 	@Override
 	public double calculateTotalCost() {
 		double totalPrice = 0;
+		
 		for (Computer computer : cart.getComputersInTheCart()) {
 			totalPrice = totalPrice + computer.getPriceInUSD();
 		}
@@ -32,12 +35,9 @@ public class PayWithPaymentMethod implements IBuy {
 	public void creditCardbalance() throws InsufficientBalanceException {
 		if (creditCard.getAvailableBalance() < calculateTotalCost()) {
 			throw new InsufficientBalanceException();
+		} else {
+			creditCard.setAvailableBalance(creditCard.getAvailableBalance() - calculateTotalCost());
 		}
-	}
-
-	public void logErrorInsufficientBalanceException(Exception e) {
-		LOGGER.error(e);
-		LOGGER.info("Insufficient Balance in the chosen payment method");
 	}
 
 	@Override
@@ -45,33 +45,36 @@ public class PayWithPaymentMethod implements IBuy {
 		try {
 			creditCardbalance();
 		} catch (InsufficientBalanceException e) {
-			logErrorInsufficientBalanceException(e);
+			LOGGER.info("Insufficient Balance in your Credit Card", e);
 		}
 	}
-
-	BankAccount bankAccount = new BankAccount();
 
 	public void bankAccountBalance() throws InsufficientBalanceException {
 		if (bankAccount.getAvailableBalance() < calculateTotalCost()) {
 			throw new InsufficientBalanceException();
+		} else {
+			bankAccount.setAvailableBalance(bankAccount.getAvailableBalance() - calculateTotalCost());
 		}
 	}
 
 	@Override
-	public void payByBankTransfer() {
+	public void payWithBankTransfer() {
 		try {
 			bankAccountBalance();
 		} catch (InsufficientBalanceException e) {
-			logErrorInsufficientBalanceException(e);
+			LOGGER.info("Insufficient Balance in your Bank Account", e);
 		}
-		bankAccount.setAvailableBalance(bankAccount.getAvailableBalance() - calculateTotalCost());
 	}
 
 	@Override
-	public void applyDiscountCode() {
-		@SuppressWarnings("unused")
-		DiscountCoupon discountCoupon = new DiscountCoupon();
-
+	public void applyDiscountCupon() {
+		try {
+			creditCardbalance();
+			creditCard.setAvailableBalance(
+					creditCard.getAvailableBalance() + calculateTotalCost() * (1 - discountCoupon.getDiscountRate()));
+		} catch (InsufficientBalanceException e) {
+			LOGGER.info("Insufficient Balance in your Credit Card", e);
+		}
 	}
 
 }

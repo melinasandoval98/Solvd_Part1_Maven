@@ -1,16 +1,19 @@
 package com.solvd.maven_project_ok.online_shopping.catalog;
 
+import com.solvd.maven_project_ok.online_shopping.catalog.enums.ComputerBrands;
+
 public class Computer extends Product {
 	private int ramMemoryInGb;
 	private String processor;
 	private String hardDiskType;
 	private String hardDiskCapacityInGB;
+	private ComputerBrands brand;
 
 	public Computer() {
 	}
 
-	public Computer(String brand, String model, double price, int availiability, double sizeInInchs, int ramMemoryInGb,
-			String processor, String hardDiskType, String hardDiskCapacity) {
+	public Computer(ComputerBrands brand, String model, double price, int availiability, double sizeInInchs,
+			int ramMemoryInGb, String processor, String hardDiskType, String hardDiskCapacity) {
 		this.setBrand(brand);
 		this.setModel(model);
 		this.setPriceInUSD(price);
@@ -51,6 +54,14 @@ public class Computer extends Product {
 
 	public void setHardDiskCapacity(String hardDiskCapacity) {
 		this.hardDiskCapacityInGB = hardDiskCapacity;
+	}
+
+	public ComputerBrands getBrand() {
+		return brand;
+	}
+
+	public void setBrand(ComputerBrands brand) {
+		this.brand = brand;
 	}
 
 }

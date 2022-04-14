@@ -4,88 +4,55 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.solvd.maven_project_ok.exception.ProductNotFoundException;
+import com.solvd.maven_project_ok.online_shopping.catalog.enums.Products;
 
 public class Catalog {
 	public static final Logger LOGGER = LogManager.getLogger(Catalog.class);
 	private LinkedHashSet<Computer> listOfComputersForSale = new LinkedHashSet<Computer>();
 	private LinkedHashSet<SmartPhone> listOfSmartPhonesForSale = new LinkedHashSet<SmartPhone>();
 	private LinkedHashSet<SmartTV> listOfSmartTVsForSale = new LinkedHashSet<SmartTV>();
-	private Map<String, LinkedHashSet<SmartPhone>> smartPhoneKeyWords = new HashMap<String, LinkedHashSet<SmartPhone>>();
-	private Map<String, LinkedHashSet<SmartTV>> smartTVKeyWords = new HashMap<String, LinkedHashSet<SmartTV>>();
 
-	public void findProduct(String pattern) throws ProductNotFoundException {
+	@Override
+	public String toString() {
+		return "Catalog [listOfComputersForSale=" + listOfComputersForSale + ", listOfSmartPhonesForSale="
+				+ listOfSmartPhonesForSale + ", listOfSmartTVsForSale=" + listOfSmartTVsForSale + "]";
+	}
+
+	public void findProductByKeyword(String pattern) throws ProductNotFoundException {
 		ISearchable searchable = (product) -> Arrays.asList(product.getKeyWords()).contains(pattern.toUpperCase());
-		Products matcher = null;
-		for (Products product : Products.values()) {
-			if (searchable.search(product)) {
-				matcher = product;
-				break;
-			} else {
-				throw new ProductNotFoundException();
-			}
+		if (Arrays.asList(Products.values()).stream().filter((product) -> searchable.search(product)) == null) {
+			throw new ProductNotFoundException();
+		} else {
+			showProductsOfCategory(pattern);
 		}
-		switch (matcher) {
+	}
+
+	public void showProductsOfCategory(String product) {
+		switch (Products.valueOf(product.toUpperCase())) {
 		case COMPUTER:
-			showComputersForSale();
+			LOGGER.info(listOfComputersForSale);
 			break;
 		case SMART_PHONE:
-			showComputersForSale();
+			LOGGER.info(listOfSmartPhonesForSale);
 			break;
 		case SMART_TV:
-			showComputersForSale();
+			LOGGER.info(listOfSmartTVsForSale);
 			break;
 		default:
 			break;
 		}
 	}
 
-	public void findAProduct(String pattern) {
-		while (true) {
-			try {
-				findProduct(pattern);
-			} catch (ProductNotFoundException e) {
-				LOGGER.error("A product with the specified name could not be found, please try again", e);
-			}
-		}
-	}
-
-	public void showComputersForSale() {
-		LOGGER.info(listOfComputersForSale);
-	}
-
-	public void showSmartPhonesForSale() {
-		LOGGER.info(listOfSmartPhonesForSale);
-	}
-
-	public void showSmartTVsForSale() {
-		LOGGER.info(listOfSmartTVsForSale);
-	}
-
 	public void showCatalogOfItemsForSale() {
-		showComputersForSale();
-		showSmartPhonesForSale();
-		showSmartTVsForSale();
-	}
-
-	public Map<String, LinkedHashSet<SmartPhone>> getSmartPhoneKeyWords() {
-		return smartPhoneKeyWords;
-	}
-
-	public void setSmartPhoneKeyWords(Map<String, LinkedHashSet<SmartPhone>> smartPhoneKeyWords) {
-		this.smartPhoneKeyWords = smartPhoneKeyWords;
-	}
-
-	public Map<String, LinkedHashSet<SmartTV>> getSmartTVKeyWords() {
-		return smartTVKeyWords;
-	}
-
-	public void setSmartTVKeyWords(Map<String, LinkedHashSet<SmartTV>> smartTVKeyWords) {
-		this.smartTVKeyWords = smartTVKeyWords;
+		LOGGER.info(listOfComputersForSale);
+		LOGGER.info(listOfSmartPhonesForSale);
+		LOGGER.info(listOfSmartTVsForSale);
 	}
 
 	public LinkedHashSet<Computer> getListOfComputersForSale() {

@@ -1,4 +1,4 @@
-package com.solvd.maven_project_ok.online_shopping.catalog;
+package com.solvd.maven_project_ok.online_shopping.catalog.enums;
 
 public enum Products {
 	COMPUTER("computer", "Computer"), SMART_TV("smart phone", "smartphone"), SMART_PHONE("smartTV", "smart TV");

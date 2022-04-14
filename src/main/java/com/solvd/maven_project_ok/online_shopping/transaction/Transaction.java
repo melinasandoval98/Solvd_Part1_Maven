@@ -3,17 +3,14 @@ package com.solvd.maven_project_ok.online_shopping.transaction;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.solvd.maven_project_ok.exception.NoProductsInTheCartException;
 import com.solvd.maven_project_ok.online_shopping.cart.Cart;
 import com.solvd.maven_project_ok.online_shopping.catalog.Catalog;
-import com.solvd.maven_project_ok.online_shopping.catalog.Computer;
-import com.solvd.maven_project_ok.online_shopping.catalog.Product;
 import com.solvd.maven_project_ok.online_shopping.catalog.ReadNumericOptionsFromUser;
-import com.solvd.maven_project_ok.online_shopping.catalog.SmartPhone;
-import com.solvd.maven_project_ok.online_shopping.catalog.SmartTV;
 import com.solvd.maven_project_ok.online_shopping.payment_method.PayWithPaymentMethod;
 import com.solvd.maven_project_ok.online_shopping.payment_method.PaymentMethods;
 
-public class Transaction implements ISell {
+public class Transaction {
 	public static final Logger LOGGER = LogManager.getLogger(Transaction.class);
 
 	Catalog catalog = new Catalog();
@@ -27,33 +24,32 @@ public class Transaction implements ISell {
 			pay.payWithCreditCard();
 			break;
 		case BANK_TRANSFER:
-			pay.payByBankTransfer();
+			pay.payWithBankTransfer();
 			break;
 		case DISCOUNT_COUPON:
-			pay.applyDiscountCode();
+			pay.applyDiscountCupon();
 			pay.payWithCreditCard();
 			break;
 		}
 	}
 
-	@Override
-	public void sellComputer(Computer c) {
-		c.setAvailiability(c.getAvailiability() - 1);
-		cart.setComputersInTheCart(null);
+	public void sellProductsInTheCart() throws NoProductsInTheCartException {
+		ISell sellComputers = () -> cart.getComputersInTheCart().stream()
+				.forEach((computer) -> computer.setAvailiability(computer.getAvailiability() - 1));
+		cart.getComputersInTheCart().clear();
+		ISell sellSmartPhones = () -> cart.getSmartPhonesInTheCart().stream()
+				.forEach((smartPhone) -> smartPhone.setAvailiability(smartPhone.getAvailiability() - 1));
+		cart.getSmartPhonesInTheCart().clear();
+		ISell sellSmartTVs = () -> cart.getSmartTVsInTheCart().stream()
+				.forEach((smartTV) -> smartTV.setAvailiability(smartTV.getAvailiability() - 1));
+		cart.getSmartTVsInTheCart().clear();
+		if (cart.getComputersInTheCart().size() + cart.getSmartPhonesInTheCart().size()
+				+ cart.getSmartTVsInTheCart().size() == 0) {
+			throw new NoProductsInTheCartException();
+		} else {
+			sellComputers.sell();
+			sellSmartPhones.sell();
+			sellSmartTVs.sell();
+		}
 	}
-
-	@Override
-	public void sellSmartPhone(SmartPhone sm) {
-		sm.setAvailiability(sm.getAvailiability() - 1);
-		cart.setSmartPhonesInTheCart(null);
-
-	}
-
-	@Override
-	public void sellSmartTV(SmartTV st) {
-		st.setAvailiability(st.getAvailiability() - 1);
-		cart.setSmartTVsInTheCart(null);
-
-	}
-
 }
