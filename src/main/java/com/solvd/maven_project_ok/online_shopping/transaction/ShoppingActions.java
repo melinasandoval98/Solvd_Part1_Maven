@@ -1,4 +1,4 @@
-package com.solvd.maven_project_ok.online_shopping.person;
+package com.solvd.maven_project_ok.online_shopping.transaction;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -8,7 +8,7 @@ import com.solvd.maven_project_ok.online_shopping.catalog.Computer;
 import com.solvd.maven_project_ok.online_shopping.catalog.SmartPhone;
 import com.solvd.maven_project_ok.online_shopping.catalog.SmartTV;
 import com.solvd.maven_project_ok.online_shopping.payment_method.PaymentMethods;
-import com.solvd.maven_project_ok.online_shopping.transaction.Transaction;
+import com.solvd.maven_project_ok.online_shopping.person.Costumer;
 
 public enum ShoppingActions {
 	ADD_COMPUTER_TO_THE_CART {

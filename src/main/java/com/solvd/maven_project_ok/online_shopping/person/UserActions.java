@@ -1,4 +1,4 @@
-package com.solvd.maven_project_ok.online_shopping.entryPoint;
+package com.solvd.maven_project_ok.online_shopping.person;
 
 import java.util.stream.Collectors;
 

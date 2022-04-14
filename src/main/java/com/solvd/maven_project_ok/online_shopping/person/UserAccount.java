@@ -30,9 +30,9 @@ public class UserAccount implements IAccessable {
 		this.userName = userName;
 		this.password = password;
 	}
-	
+
 	public UserAccount() {
-		
+
 	}
 
 	@Override
