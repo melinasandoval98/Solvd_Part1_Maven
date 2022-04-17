@@ -1,0 +1,20 @@
+package com.solvd.mavenprojectok.onlineshopping.catalog.enums;
+
+public enum Products {
+	COMPUTER("computer", "Computer"), SMART_TV("smart phone", "smartphone"), SMART_PHONE("smartTV", "smart TV");
+
+	private String[] keyWords;
+
+	Products(String... keyWords) {
+		this.keyWords = keyWords;
+	}
+
+	public String[] getKeyWords() {
+		return keyWords;
+	}
+
+	public void setKeyWords(String[] keyWords) {
+		this.keyWords = keyWords;
+	}
+
+}
