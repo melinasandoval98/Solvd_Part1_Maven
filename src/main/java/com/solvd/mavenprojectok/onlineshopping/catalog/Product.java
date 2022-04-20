@@ -1,10 +1,10 @@
 package com.solvd.mavenprojectok.onlineshopping.catalog;
 
 public class Product {
-	private String model;
-	private double priceInUSD;
-	private int availiability;
-	private double sizeInInchs;
+	public String model;
+	public double priceInUSD;
+	public int availiability;
+	public double sizeInInchs;
 
 	public String getModel() {
 		return model;
@@ -35,6 +35,17 @@ public class Product {
 	}
 
 	public void setSizeInInchs(double sizeInInchs) {
+		this.sizeInInchs = sizeInInchs;
+	}
+
+	public Product() {
+	}
+
+	public Product(String model, double price, int availiability, double sizeInInchs) {
+		super();
+		this.model = model;
+		this.priceInUSD = price;
+		this.availiability = availiability;
 		this.sizeInInchs = sizeInInchs;
 	}
 

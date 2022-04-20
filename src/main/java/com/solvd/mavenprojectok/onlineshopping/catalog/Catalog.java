@@ -18,18 +18,25 @@ public class Catalog {
 	private LinkedHashSet<SmartPhone> listOfSmartPhonesForSale = new LinkedHashSet<SmartPhone>();
 	private LinkedHashSet<SmartTV> listOfSmartTVsForSale = new LinkedHashSet<SmartTV>();
 
-	@Override
-	public String toString() {
-		return "Catalog [listOfComputersForSale=" + listOfComputersForSale + ", listOfSmartPhonesForSale="
-				+ listOfSmartPhonesForSale + ", listOfSmartTVsForSale=" + listOfSmartTVsForSale + "]";
+	public Products searchProductByKeyword(ISearchable searchable, String pattern) throws ProductNotFoundException {
+		for (Products product : Products.values()) {
+			if (searchable.search(product.getKeywords(), pattern)) {
+				break;
+			} else {
+				throw new ProductNotFoundException();
+			}
+		}
+		return Products.valueOf(pattern.toUpperCase());
 	}
 
-	public void findProductByKeyword(String pattern) throws ProductNotFoundException {
-		ISearchable searchable = (product) -> Arrays.asList(product.getKeyWords()).contains(pattern.toUpperCase());
-		if (Arrays.asList(Products.values()).stream().filter((product) -> searchable.search(product)) == null) {
-			throw new ProductNotFoundException();
-		} else {
-			showProductsOfCategory(pattern);
+	public Products findProductByKeyword(ISearchable searchable, String pattern) {
+		while (true) {
+			try {
+				return searchProductByKeyword(searchable, pattern);
+			} catch (ProductNotFoundException e) {
+				LOGGER.error("No products have been found with that name");
+				continue;
+			}
 		}
 	}
 
@@ -47,12 +54,6 @@ public class Catalog {
 		default:
 			break;
 		}
-	}
-
-	public void showCatalogOfItemsForSale() {
-		LOGGER.info(listOfComputersForSale);
-		LOGGER.info(listOfSmartPhonesForSale);
-		LOGGER.info(listOfSmartTVsForSale);
 	}
 
 	public LinkedHashSet<Computer> getListOfComputersForSale() {
@@ -78,4 +79,45 @@ public class Catalog {
 	public void setListOfSmartsTVsForSale(LinkedHashSet<SmartTV> listOfSmartsTVsForSale) {
 		this.listOfSmartTVsForSale = listOfSmartsTVsForSale;
 	}
+
+	@Override
+	public String toString() {
+		return "Catalog [listOfComputersForSale=" + listOfComputersForSale + ", listOfSmartPhonesForSale="
+				+ listOfSmartPhonesForSale + ", listOfSmartTVsForSale=" + listOfSmartTVsForSale + "]";
+	}
+
+	public void showComputersForSale() {
+		LOGGER.info("Computers for sale:");
+		LOGGER.info("---------------------------------------------------------------------------");
+		LOGGER.info("BRAND\tMODEL\t\tSIZE(inch)\tRAM(GB)\tH.D.Capacity\tPRICE(USD)");
+		LOGGER.info("---------------------------------------------------------------------------");
+		listOfComputersForSale.stream()
+				.forEach(computer -> LOGGER.info(computer.getBrand().getBrandName() + "\t" + computer.getModel() + "\t"
+						+ computer.getSizeInInchs() + "\t\t" + computer.getRamMemoryInGb() + "\t"
+						+ computer.getHardDiskCapacity() + "\t\t" + computer.getPriceInUSD()));
+		LOGGER.info("\n");
+	}
+
+	public void showSmartPhonesForSale() {
+		LOGGER.info("Smart Phones for sale:");
+		LOGGER.info("-------------------------------------------------------------------");
+		LOGGER.info("BRAND\tMODEL\t\tSIZE(inch)\tRAM(GB)\tPIXELS\tPRICE(USD)");
+		LOGGER.info("-------------------------------------------------------------------");
+		listOfSmartPhonesForSale.stream().forEach(
+				smartPhones -> LOGGER.info(smartPhones.getBrand().getBrandName() + "\t" + smartPhones.getModel() + "\t"
+						+ smartPhones.getSizeInInchs() + "\t\t" + smartPhones.getRamMemoryInGb() + "\t"
+						+ smartPhones.getCameraPixel() + "\t" + smartPhones.getPriceInUSD()));
+		LOGGER.info("\n");
+	}
+
+	public void showSmartTVsForSale() {
+		LOGGER.info("Smart TVs for sale:");
+		LOGGER.info("----------------------------------------------------------");
+		LOGGER.info("BRAND\t\tMODEL\t\tSIZE(inch)\tPRICE(USD)");
+		LOGGER.info("----------------------------------------------------------");
+		listOfSmartTVsForSale.stream().forEach(smartTV -> LOGGER.info(smartTV.getBrand().getBrandName() + "\t\t"
+				+ smartTV.getModel() + "\t" + smartTV.getSizeInInchs() + "\t\t" + smartTV.getPriceInUSD()));
+		LOGGER.info("\n");
+	}
+
 }

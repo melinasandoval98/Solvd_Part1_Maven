@@ -1,5 +1,7 @@
 package com.solvd.mavenprojectok.onlineshopping.transaction;
-
+//Agregar la opción de registrar venta!!!!!!!!!!!!!!!!!!!!1 Incluso puedo usar un queue para registrar las compras de distintos usuarios.
+//Cuando registe las ventas debo registrar los datos del usuario comprador, sus datos del método de pago, número de transacción.
+//Debo crear un método para crear un número de operación!! Puedo ver si puedo usar Lambda Expresions para eso.
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

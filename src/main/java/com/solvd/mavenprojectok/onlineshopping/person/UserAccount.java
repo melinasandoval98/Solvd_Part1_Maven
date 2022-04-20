@@ -7,8 +7,16 @@ public class UserAccount implements IAccessable {
 	public static final Logger LOGGER = LogManager.getLogger(UserAccount.class);
 	private String userName;
 	private String password;
-	private boolean statusIn;
-	private boolean statusOut;
+	private boolean status;
+
+	public UserAccount() {
+
+	}
+
+	public UserAccount(String userName, String password) {
+		this.userName = userName;
+		this.password = password;
+	}
 
 	public String getUserName() {
 		return userName;
@@ -26,33 +34,28 @@ public class UserAccount implements IAccessable {
 		this.password = password;
 	}
 
-	public UserAccount(String userName, String password) {
-		this.userName = userName;
-		this.password = password;
-	}
-
-	public UserAccount() {
-
-	}
-
 	@Override
-	public boolean logIn(String userName, String password) {
+	public String logIn(String userName, String password) {
 		Administrator admin = new Administrator();
-		if (logOut()) {
+		if (status == false) {
 			IVerifyable verifayable = () -> admin.getMapOfUserNamesAndPasswords().containsKey(userName)
 					&& password.hashCode() == admin.getMapOfUserNamesAndPasswords().get(userName);
-			statusIn = verifayable.verify();
+			status = verifayable.verify();
 		}
-		return statusIn;
+		return "Successful Login";
 	}
 
 	@Override
-	public boolean logOut() {
-		if (statusIn) {
-			statusIn = false;
-			statusOut = true;
+	public String logOut() {
+		if (status) {
+			status = false;
 		}
-		return statusOut;
+		return "Bye!";
+	}
+
+	@Override
+	public String toString() {
+		return "UserAccount [userName=" + userName + ", password=" + password + ", statusIn=" + status + "]";
 	}
 
 }

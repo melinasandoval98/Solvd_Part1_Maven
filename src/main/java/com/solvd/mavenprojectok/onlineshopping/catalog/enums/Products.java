@@ -3,18 +3,18 @@ package com.solvd.mavenprojectok.onlineshopping.catalog.enums;
 public enum Products {
 	COMPUTER("computer", "Computer"), SMART_TV("smart phone", "smartphone"), SMART_PHONE("smartTV", "smart TV");
 
-	private String[] keyWords;
+	private String[] keywords;
 
-	Products(String... keyWords) {
-		this.keyWords = keyWords;
+	Products(String... keywords) {
+		this.keywords = keywords;
 	}
 
-	public String[] getKeyWords() {
-		return keyWords;
+	public String[] getKeywords() {
+		return keywords;
 	}
 
-	public void setKeyWords(String[] keyWords) {
-		this.keyWords = keyWords;
+	public void setKeywords(String[] keywords) {
+		this.keywords = keywords;
 	}
 
 }
