@@ -97,7 +97,7 @@ public class OnlineStoreRunner {
 
 		// Creation of the Cart
 		Cart cart = new Cart();
-		
+
 		// Map of user accounts creation
 		UserAccount.MapOfUserNamesAndPasswords.put("beatriceJenkins09", "difficultPassword".hashCode());
 
@@ -109,13 +109,12 @@ public class OnlineStoreRunner {
 		smartPhoneCatalog.showProductsForSale();
 		LOGGER.info("Smart TV Catalog");
 		smartTVCatalog.showProductsForSale();
-		
-		//LogIn
+
+		// LogIn
 		LOGGER.info("Please login to your account to star shopping");
 		IVerifyable verifyable = (map, userName, password) -> map.containsKey(userName)
 				&& password.hashCode() == map.get(userName);
 		costumerBeatriceJenkins.getUserAccount().logIn(verifyable);
-		
 
 		// Shopping
 		ISearchable searchable = (stringArray, string) -> Arrays.asList(stringArray).contains(string.toLowerCase());
@@ -138,7 +137,8 @@ public class OnlineStoreRunner {
 
 		cart.showProductsInTheCart();
 
-		// Buy
+		// The consumer buys some products and causes the decrease in the quantity
+		// available of each one
 		Consumer<LinkedList<Computer>> sellComputersInTheCart = (listOfComputers) -> listOfComputers.stream()
 				.forEach((product) -> product.setAvailiability(product.getAvailiability() - 1));
 
@@ -151,6 +151,7 @@ public class OnlineStoreRunner {
 		Transaction<BankAccount> transaction = new Transaction<BankAccount>(cart.getAccumulatedPrice(), bankAccountBJ);
 		transaction.sellProducts(cart, sellComputersInTheCart, sellSmartPhonesInTheCart, sellSmartTVsInTheCart);
 
+		// The Costumer pays with a certain payment method
 		BiPredicate<Double, Double> sufficientBalance = (totalToPay, balance) -> balance > totalToPay;
 		IBuy<BankAccount> payWithBankAccount = (totalToPay, bankAccount) -> bankAccount
 				.setAvailableBalance(bankAccount.getAvailableBalance() - totalToPay);
