@@ -4,15 +4,19 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 //This class can sort an array of INTEGERS
 public class QuickSort {
+	public static final Logger LOGGER = LogManager.getLogger(QuickSort.class);
+
 	public static void main(String[] args) {
 		System.out.println(
 				"Please, enter the number of elements of the array you want to sort through the Quick Sort method:");
-		Scanner sn = new Scanner(System.in);
-		try {
+		try (Scanner sn = new Scanner(System.in)) {
 			int dim = sn.nextInt();
-			System.out.println("Please, enter the elements of the array:");
+			LOGGER.info("Please, enter the elements of the array:");
 			int[] array = new int[dim];
 			for (int k = 0; k < dim; k++) {
 				int element = sn.nextInt();
@@ -20,10 +24,8 @@ public class QuickSort {
 			}
 			QuickSort qs = new QuickSort();
 			qs.quickSort(array);
-			System.out.println("The ordered arrangement is:");
-			System.out.println(Arrays.toString(array));
-		} finally {
-			sn.close();
+			LOGGER.info("The ordered arrangement is:");
+			LOGGER.info(Arrays.toString(array));
 		}
 	}
 

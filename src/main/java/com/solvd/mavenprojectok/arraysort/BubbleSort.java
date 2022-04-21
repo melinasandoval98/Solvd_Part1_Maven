@@ -3,15 +3,19 @@ package com.solvd.mavenprojectok.arraysort;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 //This class can sort an array of INTEGERS
 public class BubbleSort {
+	public static final Logger LOGGER = LogManager.getLogger(BubbleSort.class);
+
 	public static void main(String[] args) {
-		System.out.println(
+		LOGGER.info(
 				"Please, enter the number of elements of the array you want to sort through the bubble sorting method:");
-		Scanner sn = new Scanner(System.in);
-		try {
+		try (Scanner sn = new Scanner(System.in)) {
 			int m = sn.nextInt();
-			System.out.println("Please, enter the elements of the array:");
+			LOGGER.info("Please, enter the elements of the array:");
 			int[] array = new int[m];
 			for (int k = 0; k < m; k++) {
 				int t = sn.nextInt();
@@ -19,10 +23,8 @@ public class BubbleSort {
 			}
 			BubbleSort bsrt = new BubbleSort();
 			bsrt.bubbleSort(array);
-			System.out.println("The ordered arrangement is:");
-			System.out.println(Arrays.toString(array));
-		} finally {
-			sn.close();
+			LOGGER.info("The ordered arrangement is:");
+			LOGGER.info(Arrays.toString(array));
 		}
 	}
 
