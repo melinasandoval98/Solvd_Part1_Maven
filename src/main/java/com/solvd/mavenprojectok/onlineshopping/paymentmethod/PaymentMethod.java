@@ -3,24 +3,14 @@ package com.solvd.mavenprojectok.onlineshopping.paymentmethod;
 import com.solvd.mavenprojectok.onlineshopping.person.Person;
 
 public abstract class PaymentMethod {
-	private String holderName;
-	private String holderSurname;
-	private double availableBalance;
+	public Person holder;
+	public double availableBalance;
+	public static int numberOfPMethodsCreated;
 
-	public String getHolderName() {
-		return holderName;
-	}
-
-	public void setHolderName(String holderName) {
-		this.holderName = holderName;
-	}
-
-	public String getHolderSurname() {
-		return holderSurname;
-	}
-
-	public void setHolderSurname(String holderSurname) {
-		this.holderSurname = holderSurname;
+	public PaymentMethod(Person holder, double availableBalance) {
+		this.holder = holder;
+		this.availableBalance = availableBalance;
+		numberOfPMethodsCreated++;
 	}
 
 	public double getAvailableBalance() {
@@ -31,8 +21,11 @@ public abstract class PaymentMethod {
 		this.availableBalance = availableBalance;
 	}
 
-	public void setPaymentMethodHolder() {
-		setHolderName(Person.getName());
-		setHolderSurname(Person.getSurname());
+	public Person getHolder() {
+		return holder;
+	}
+
+	public void setHolder(Person holder) {
+		this.holder = holder;
 	}
 }

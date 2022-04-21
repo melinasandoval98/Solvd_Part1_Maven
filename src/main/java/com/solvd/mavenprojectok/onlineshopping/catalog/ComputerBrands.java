@@ -1,4 +1,4 @@
-package com.solvd.mavenprojectok.onlineshopping.catalog.enums;
+package com.solvd.mavenprojectok.onlineshopping.catalog;
 
 public enum ComputerBrands {
 	MAC("Mac"), LENOVO("Lenovo"), ACER("Acer");

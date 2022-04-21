@@ -1,57 +1,81 @@
 package com.solvd.mavenprojectok.onlineshopping.transaction;
-//Agregar la opción de registrar venta!!!!!!!!!!!!!!!!!!!!1 Incluso puedo usar un queue para registrar las compras de distintos usuarios.
-//Cuando registe las ventas debo registrar los datos del usuario comprador, sus datos del método de pago, número de transacción.
-//Debo crear un método para crear un número de operación!! Puedo ver si puedo usar Lambda Expresions para eso.
+
+import java.util.LinkedList;
+import java.util.function.BiPredicate;
+import java.util.function.Consumer;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.solvd.mavenprojectok.onlineshopping.cart.Cart;
-import com.solvd.mavenprojectok.onlineshopping.catalog.Catalog;
-import com.solvd.mavenprojectok.onlineshopping.catalog.ReadNumericOptionsFromUser;
+import com.solvd.mavenprojectok.onlineshopping.catalog.Computer;
+import com.solvd.mavenprojectok.onlineshopping.catalog.SmartPhone;
+import com.solvd.mavenprojectok.onlineshopping.catalog.SmartTV;
+import com.solvd.mavenprojectok.onlineshopping.exception.InsufficientBalanceException;
 import com.solvd.mavenprojectok.onlineshopping.exception.NoProductsInTheCartException;
-import com.solvd.mavenprojectok.onlineshopping.paymentmethod.PayWithPaymentMethod;
-import com.solvd.mavenprojectok.onlineshopping.paymentmethod.PaymentMethods;
+import com.solvd.mavenprojectok.onlineshopping.paymentmethod.PaymentMethod;
 
-public class Transaction {
+public class Transaction<T extends PaymentMethod> {
 	public static final Logger LOGGER = LogManager.getLogger(Transaction.class);
+	private double totalAmountOfMoney;
+	private T chosenPaymentMethod;
 
-	Catalog catalog = new Catalog();
-	Cart cart = new Cart();
-	ReadNumericOptionsFromUser read = new ReadNumericOptionsFromUser();
+	public Transaction(double totalAmountOfMoney, T chosenPaymentMethod) {
+		this.totalAmountOfMoney = totalAmountOfMoney;
+		this.chosenPaymentMethod = chosenPaymentMethod;
+	}
 
-	public void pay(PaymentMethods paymentMethod) {
-		PayWithPaymentMethod pay = new PayWithPaymentMethod();
-		switch (paymentMethod) {
-		case CREDIT_CARD:
-			pay.payWithCreditCard();
-			break;
-		case BANK_TRANSFER:
-			pay.payWithBankTransfer();
-			break;
-		case DISCOUNT_COUPON:
-			pay.applyDiscountCupon();
-			pay.payWithCreditCard();
-			break;
+	private void payWithPM(BiPredicate<Double, Double> sufficientBalance, IBuy<T> payWithpM)
+			throws InsufficientBalanceException {
+		if (sufficientBalance.test(totalAmountOfMoney, chosenPaymentMethod.getAvailableBalance())) {
+			payWithpM.pay(totalAmountOfMoney, chosenPaymentMethod);
+		} else {
+			throw new InsufficientBalanceException();
 		}
 	}
 
-	public void sellProductsInTheCart() throws NoProductsInTheCartException {
-		ISell sellComputers = () -> cart.getComputersInTheCart().stream()
-				.forEach((computer) -> computer.setAvailiability(computer.getAvailiability() - 1));
-		cart.getComputersInTheCart().clear();
-		ISell sellSmartPhones = () -> cart.getSmartPhonesInTheCart().stream()
-				.forEach((smartPhone) -> smartPhone.setAvailiability(smartPhone.getAvailiability() - 1));
-		cart.getSmartPhonesInTheCart().clear();
-		ISell sellSmartTVs = () -> cart.getSmartTVsInTheCart().stream()
-				.forEach((smartTV) -> smartTV.setAvailiability(smartTV.getAvailiability() - 1));
-		cart.getSmartTVsInTheCart().clear();
-		if (cart.getComputersInTheCart().size() + cart.getSmartPhonesInTheCart().size()
-				+ cart.getSmartTVsInTheCart().size() == 0) {
+	public void pay(BiPredicate<Double, Double> sufficientBalance, IBuy<T> payWithpM) {
+		try {
+			payWithPM(sufficientBalance, payWithpM);
+		} catch (InsufficientBalanceException e) {
+			LOGGER.error("insufficient balance", e);
+		}
+	}
+
+	private void sell(Cart cart, Consumer<LinkedList<Computer>> sellComputers,
+			Consumer<LinkedList<SmartPhone>> sellSmartPhones, Consumer<LinkedList<SmartTV>> sellSmartTVs)
+			throws NoProductsInTheCartException {
+		if (cart.getComputersInTheCart().isEmpty() && cart.getSmartPhonesInTheCart().isEmpty()
+				&& cart.getSmartTVsInTheCart().isEmpty()) {
 			throw new NoProductsInTheCartException();
 		} else {
-			sellComputers.sell();
-			sellSmartPhones.sell();
-			sellSmartTVs.sell();
+			sellComputers.accept(cart.getComputersInTheCart());
+			cart.getComputersInTheCart().clear();
+			sellSmartPhones.accept(cart.getSmartPhonesInTheCart());
+			cart.getSmartPhonesInTheCart().clear();
+			sellSmartTVs.accept(cart.getSmartTVsInTheCart());
+			cart.getSmartTVsInTheCart().clear();
 		}
 	}
+
+	public void sellProducts(Cart cart, Consumer<LinkedList<Computer>> sellComputers,
+			Consumer<LinkedList<SmartPhone>> sellSmartPhones, Consumer<LinkedList<SmartTV>> sellSmartTVs) {
+		try {
+			sell(cart, sellComputers, sellSmartPhones, sellSmartTVs);
+		} catch (NoProductsInTheCartException e) {
+			LOGGER.info("Your cart is empty! add some products to be able to continue shopping", e);
+		}
+	}
+
+	public void getTransactionTicket() {
+		LOGGER.info("------------------------------");
+		LOGGER.info("THANK YOU FOR BUY OUR PRODUCTS");
+		LOGGER.info("------------------------------");
+		LOGGER.info("Transaction details:");
+		LOGGER.info("Total: " + totalAmountOfMoney);
+		LOGGER.info("Costumer: " + chosenPaymentMethod.holder.name + " " + chosenPaymentMethod.holder.surname);
+		LOGGER.info("Paid with " + chosenPaymentMethod);
+		LOGGER.info("------------------------------");
+	}
+
 }

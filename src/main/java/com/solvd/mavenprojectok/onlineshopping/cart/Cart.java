@@ -43,7 +43,7 @@ public class Cart {
 		}
 	}
 
-	public void addComputer(Computer computer) {
+	public void addProductToCart(Computer computer) {
 		try {
 			addComputerToTheCart(computer);
 		} catch (ProductNotAvilableException e) {
@@ -60,7 +60,7 @@ public class Cart {
 		}
 	}
 
-	public void addSmartPhone(SmartPhone smartPhone) {
+	public void addProductToCart(SmartPhone smartPhone) {
 		try {
 			addSmartPhoneToTheCart(smartPhone);
 		} catch (ProductNotAvilableException e) {
@@ -77,7 +77,7 @@ public class Cart {
 		}
 	}
 
-	public void addSmartTV(SmartTV smartTV) {
+	public void addProductToCart(SmartTV smartTV) {
 		try {
 			addSmartTVToTheCart(smartTV);
 		} catch (ProductNotAvilableException e) {

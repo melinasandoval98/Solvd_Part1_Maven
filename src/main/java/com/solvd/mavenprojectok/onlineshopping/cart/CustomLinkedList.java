@@ -1,8 +1,6 @@
 package com.solvd.mavenprojectok.onlineshopping.cart;
 
-import java.util.Iterator;
-
-public class CustomLinkedList<T> implements Iterable<T> {
+public class CustomLinkedList<T> {
 	private Node<T> head;
 	private int size = 1;
 
@@ -50,12 +48,6 @@ public class CustomLinkedList<T> implements Iterable<T> {
 			node = node.getNextNode();
 		}
 		node.setNextNode(node.getNextNode().getNextNode());
-	}
-
-	@Override
-	public Iterator iterator() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

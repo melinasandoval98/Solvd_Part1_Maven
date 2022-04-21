@@ -1,15 +1,13 @@
 package com.solvd.mavenprojectok.onlineshopping.paymentmethod;
 
+import com.solvd.mavenprojectok.onlineshopping.person.Person;
+
 public class BankAccount extends PaymentMethod {
 	private long accountNumber;
-	
-	public BankAccount() {
-		super();
-	}
-	
-	public BankAccount(long accountNumber, double availableBalance) {
+
+	public BankAccount(Person holder, double availableBalance, long accountNumber) {
+		super(holder, availableBalance);
 		this.accountNumber = accountNumber;
-		this.setAvailableBalance(availableBalance);
 	}
 
 	public long getAccountNumber() {
@@ -19,5 +17,10 @@ public class BankAccount extends PaymentMethod {
 	public void setAccountNumber(long accountNumber) {
 		this.accountNumber = accountNumber;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "BankAccount [accountNumber=" + accountNumber + "]";
+	}
+
 }

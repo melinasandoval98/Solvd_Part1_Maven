@@ -1,25 +1,18 @@
 package com.solvd.mavenprojectok.onlineshopping.catalog;
 
-import com.solvd.mavenprojectok.onlineshopping.catalog.enums.SmartTVBrands;
-
 public class SmartTV extends Product {
-	private SmartTVBrands brand;
 
 	public SmartTV() {
 	}
 
-	public SmartTV(SmartTVBrands brand, String model, double price, int availiability, double sizeInInchs) {
-		this.setBrand(brand);
-		this.setModel(model);
-		this.setPriceInUSD(price);
-		this.setAvailiability(availiability);
+	public SmartTV(String brand, String model, double price, int availiability, double sizeInInchs) {
+		super(brand, model, price, availiability, sizeInInchs);
 	}
 
-	public SmartTVBrands getBrand() {
-		return brand;
+	@Override
+	public String toString() {
+		return "SmartTV [brand=" + brand + ", model=" + model + ", priceInUSD=" + priceInUSD + ", availiability="
+				+ availiability + ", sizeInInchs=" + sizeInInchs + "]";
 	}
 
-	public void setBrand(SmartTVBrands brand) {
-		this.brand = brand;
-	}
 }

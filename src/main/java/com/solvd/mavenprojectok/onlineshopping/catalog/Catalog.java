@@ -1,15 +1,9 @@
 package com.solvd.mavenprojectok.onlineshopping.catalog;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.solvd.mavenprojectok.onlineshopping.catalog.enums.Products;
 import com.solvd.mavenprojectok.onlineshopping.exception.ProductNotFoundException;
 
 public class Catalog {
@@ -40,16 +34,16 @@ public class Catalog {
 		}
 	}
 
-	public void showProductsOfCategory(String product) {
-		switch (Products.valueOf(product.toUpperCase())) {
+	public void showProductsOfCategory(Products product) {
+		switch (product) {
 		case COMPUTER:
-			LOGGER.info(listOfComputersForSale);
+			showComputersForSale();
 			break;
 		case SMART_PHONE:
-			LOGGER.info(listOfSmartPhonesForSale);
+			showSmartPhonesForSale();
 			break;
 		case SMART_TV:
-			LOGGER.info(listOfSmartTVsForSale);
+			showSmartTVsForSale();
 			break;
 		default:
 			break;
@@ -92,7 +86,7 @@ public class Catalog {
 		LOGGER.info("BRAND\tMODEL\t\tSIZE(inch)\tRAM(GB)\tH.D.Capacity\tPRICE(USD)");
 		LOGGER.info("---------------------------------------------------------------------------");
 		listOfComputersForSale.stream()
-				.forEach(computer -> LOGGER.info(computer.getBrand().getBrandName() + "\t" + computer.getModel() + "\t"
+				.forEach(computer -> LOGGER.info(computer.getBrand() + "\t" + computer.getModel() + "\t"
 						+ computer.getSizeInInchs() + "\t\t" + computer.getRamMemoryInGb() + "\t"
 						+ computer.getHardDiskCapacity() + "\t\t" + computer.getPriceInUSD()));
 		LOGGER.info("\n");
@@ -103,8 +97,8 @@ public class Catalog {
 		LOGGER.info("-------------------------------------------------------------------");
 		LOGGER.info("BRAND\tMODEL\t\tSIZE(inch)\tRAM(GB)\tPIXELS\tPRICE(USD)");
 		LOGGER.info("-------------------------------------------------------------------");
-		listOfSmartPhonesForSale.stream().forEach(
-				smartPhones -> LOGGER.info(smartPhones.getBrand().getBrandName() + "\t" + smartPhones.getModel() + "\t"
+		listOfSmartPhonesForSale.stream()
+				.forEach(smartPhones -> LOGGER.info(smartPhones.getBrand() + "\t" + smartPhones.getModel() + "\t"
 						+ smartPhones.getSizeInInchs() + "\t\t" + smartPhones.getRamMemoryInGb() + "\t"
 						+ smartPhones.getCameraPixel() + "\t" + smartPhones.getPriceInUSD()));
 		LOGGER.info("\n");
@@ -115,8 +109,8 @@ public class Catalog {
 		LOGGER.info("----------------------------------------------------------");
 		LOGGER.info("BRAND\t\tMODEL\t\tSIZE(inch)\tPRICE(USD)");
 		LOGGER.info("----------------------------------------------------------");
-		listOfSmartTVsForSale.stream().forEach(smartTV -> LOGGER.info(smartTV.getBrand().getBrandName() + "\t\t"
-				+ smartTV.getModel() + "\t" + smartTV.getSizeInInchs() + "\t\t" + smartTV.getPriceInUSD()));
+		listOfSmartTVsForSale.stream().forEach(smartTV -> LOGGER.info(smartTV.getBrand() + "\t\t" + smartTV.getModel()
+				+ "\t" + smartTV.getSizeInInchs() + "\t\t" + smartTV.getPriceInUSD()));
 		LOGGER.info("\n");
 	}
 

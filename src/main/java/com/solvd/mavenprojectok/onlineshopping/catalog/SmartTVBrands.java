@@ -1,4 +1,4 @@
-package com.solvd.mavenprojectok.onlineshopping.catalog.enums;
+package com.solvd.mavenprojectok.onlineshopping.catalog;
 
 public enum SmartTVBrands {
 	NOBLEX("Noblex"), HITACHI("Hitachi"), PHILIPS("Philips");

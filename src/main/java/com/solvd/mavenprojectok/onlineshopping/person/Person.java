@@ -3,6 +3,8 @@ package com.solvd.mavenprojectok.onlineshopping.person;
 import java.util.Date;
 import org.apache.commons.lang3.time.DateUtils;
 
+import com.solvd.mavenprojectok.onlineshopping.paymentmethod.PaymentMethod;
+
 public abstract class Person {
 	public String name;
 	public String surname;
@@ -12,10 +14,6 @@ public abstract class Person {
 	public Date dateOfBirth;
 	public Gender gender;
 	public PhoneNumber phoneNumber;
-
-	public enum Gender {
-		MALE, FEMALE;
-	}
 
 	public Person() {
 
@@ -95,6 +93,8 @@ public abstract class Person {
 	public void setAdress(Adress adress) {
 		this.adress = adress;
 	}
+	
+	public abstract void createWallet(PaymentMethod pMethod);
 
 	@Override
 	public String toString() {
@@ -102,7 +102,5 @@ public abstract class Person {
 				+ ", adress=" + adress + ", dateOfBirth=" + DateUtils.toCalendar(dateOfBirth) + ", gender=" + gender
 				+ ", phoneNumber=" + phoneNumber + "]";
 	}
-
-	public abstract void createWallet();
 
 }

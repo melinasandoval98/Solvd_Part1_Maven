@@ -1,23 +1,17 @@
 package com.solvd.mavenprojectok.onlineshopping.catalog;
 
-import com.solvd.mavenprojectok.onlineshopping.catalog.enums.SmartPhoneBrands;
-
 public class SmartPhone extends Product {
 	private int ramMemoryInGB;
 	private int cameraPixel;
 	private String color;
 	private boolean bluetooth;
-	private SmartPhoneBrands brand;
 
 	public SmartPhone() {
 	}
 
-	public SmartPhone(SmartPhoneBrands brand, String model, double price, int availiability, double sizeInInchs,
+	public SmartPhone(String brand, String model, double price, int availiability, double sizeInInchs,
 			int ramMemoryInGb, int cameraPixel, String color, boolean bluetooth) {
-		this.setBrand(brand);
-		this.setModel(model);
-		this.setPriceInUSD(price);
-		this.setAvailiability(availiability);
+		super(brand, model, price, availiability, sizeInInchs);
 		this.ramMemoryInGB = ramMemoryInGb;
 		this.cameraPixel = cameraPixel;
 		this.color = color;
@@ -56,11 +50,11 @@ public class SmartPhone extends Product {
 		this.bluetooth = bluetooth;
 	}
 
-	public SmartPhoneBrands getBrand() {
-		return brand;
+	@Override
+	public String toString() {
+		return "SmartPhone [ramMemoryInGB=" + ramMemoryInGB + ", cameraPixel=" + cameraPixel + ", color=" + color
+				+ ", bluetooth=" + bluetooth + ", brand=" + brand + ", model=" + model + ", priceInUSD=" + priceInUSD
+				+ ", availiability=" + availiability + ", sizeInInchs=" + sizeInInchs + "]";
 	}
 
-	public void setBrand(SmartPhoneBrands brand) {
-		this.brand = brand;
-	}
 }

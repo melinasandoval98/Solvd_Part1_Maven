@@ -1,10 +1,27 @@
 package com.solvd.mavenprojectok.onlineshopping.catalog;
 
 public class Product {
+	public String brand;
 	public String model;
 	public double priceInUSD;
 	public int availiability;
 	public double sizeInInchs;
+
+	public Product(String brand, String model, double price, int availiability, double sizeInInchs) {
+		this.brand = brand;
+		this.model = model;
+		this.priceInUSD = price;
+		this.availiability = availiability;
+		this.sizeInInchs = sizeInInchs;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
 
 	public String getModel() {
 		return model;
@@ -39,14 +56,6 @@ public class Product {
 	}
 
 	public Product() {
-	}
-
-	public Product(String model, double price, int availiability, double sizeInInchs) {
-		super();
-		this.model = model;
-		this.priceInUSD = price;
-		this.availiability = availiability;
-		this.sizeInInchs = sizeInInchs;
 	}
 
 	@Override

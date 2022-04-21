@@ -1,9 +1,9 @@
-package com.solvd.mavenprojectok.onlineshopping.catalog.enums;
+package com.solvd.mavenprojectok.onlineshopping.catalog;
 
 public enum SmartPhoneBrands {
-	I_PHONE("iPhone"), SAMSUNG("Samsung");
+	I_PHONE("IPhone"), SAMSUNG("Samsung");
 
-	private String brandName;
+	String brandName;
 
 	SmartPhoneBrands(String brandName) {
 		this.brandName = brandName;

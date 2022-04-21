@@ -1,6 +1,9 @@
 package com.solvd.mavenprojectok.onlineshopping.person;
 
 import org.apache.logging.log4j.Logger;
+
+import java.util.HashMap;
+
 import org.apache.logging.log4j.LogManager;
 
 public class UserAccount implements IAccessable {
@@ -8,9 +11,14 @@ public class UserAccount implements IAccessable {
 	private String userName;
 	private String password;
 	private boolean status;
+	public static HashMap<String, Integer> MapOfUserNamesAndPasswords = new HashMap<String, Integer>();
 
-	public UserAccount() {
+	public static HashMap<String, Integer> getMapOfUserNamesAndPasswords() {
+		return MapOfUserNamesAndPasswords;
+	}
 
+	public static void setMapOfUserNamesAndPasswords(HashMap<String, Integer> mapOfUserNamesAndPasswords) {
+		MapOfUserNamesAndPasswords = mapOfUserNamesAndPasswords;
 	}
 
 	public UserAccount(String userName, String password) {
@@ -35,12 +43,9 @@ public class UserAccount implements IAccessable {
 	}
 
 	@Override
-	public String logIn(String userName, String password) {
-		Administrator admin = new Administrator();
+	public String logIn(IVerifyable verifayable) {
 		if (status == false) {
-			IVerifyable verifayable = () -> admin.getMapOfUserNamesAndPasswords().containsKey(userName)
-					&& password.hashCode() == admin.getMapOfUserNamesAndPasswords().get(userName);
-			status = verifayable.verify();
+			status = verifayable.verify(MapOfUserNamesAndPasswords, userName, password);
 		}
 		return "Successful Login";
 	}

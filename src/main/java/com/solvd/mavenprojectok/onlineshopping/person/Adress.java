@@ -4,15 +4,13 @@ public class Adress {
 	private int streetNumber;
 	private String streetName;
 	private String city;
-	private String state;
 	private String Country;
 
-	public Adress(int streetNumber, String streetName, String city, String state, String country) {
+	public Adress(int streetNumber, String streetName, String city, String country) {
 		super();
 		this.streetNumber = streetNumber;
 		this.streetName = streetName;
 		this.city = city;
-		this.state = state;
 		Country = country;
 	}
 
@@ -38,14 +36,6 @@ public class Adress {
 
 	public void setCity(String city) {
 		this.city = city;
-	}
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
 	}
 
 	public String getCountry() {

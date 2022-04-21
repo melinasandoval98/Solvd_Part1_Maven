@@ -38,7 +38,7 @@ public class UniqueWordCounter {
 			mapOfUniqueWords.put(uniqueWord, matches);
 		}
 		for (String key : mapOfUniqueWords.keySet()) {
-			FileUtils.writeStringToFile(createNewTextFile(NEW_FILE_NAME, path),
+			FileUtils.writeStringToFile(createNewFile(NEW_FILE_NAME, path),
 					key + " = " + mapOfUniqueWords.get(key).toString() + "\n", StandardCharsets.UTF_8, true);
 		}
 		LOGGER.info("The map of unique words and the number of ocurrences of each in the\n" + "text file \""
@@ -69,15 +69,4 @@ public class UniqueWordCounter {
 		return newFile;
 	}
 
-	public static File createNewTextFile(String fileName, String path) {
-		while (true) {
-			try {
-				return createNewFile(fileName, path);
-
-			} catch (IOException e) {
-				LOGGER.error("A file with the specified name already exists. Please try again.", e);
-				continue;
-			}
-		}
-	}
 }

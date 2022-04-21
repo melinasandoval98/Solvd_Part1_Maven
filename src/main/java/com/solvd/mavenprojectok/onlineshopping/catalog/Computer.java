@@ -4,7 +4,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.solvd.mavenprojectok.onlineshopping.cart.Cart;
-import com.solvd.mavenprojectok.onlineshopping.catalog.enums.ComputerBrands;
 
 public class Computer extends Product {
 	public static final Logger LOGGER = LogManager.getLogger(Cart.class);
@@ -12,15 +11,14 @@ public class Computer extends Product {
 	private String processor;
 	private String hardDiskType;
 	private String hardDiskCapacity;
-	private ComputerBrands brand;
 
 	public Computer() {
 		super();
 	}
 
-	public Computer(ComputerBrands brand, String model, double price, int availiability, double sizeInInchs,
-			int ramMemoryInGb, String processor, String hardDiskType, String hardDiskCapacity) {
-		super(model, price, availiability, sizeInInchs);
+	public Computer(String brand, String model, double price, int availiability, double sizeInInchs, int ramMemoryInGb,
+			String processor, String hardDiskType, String hardDiskCapacity) {
+		super(brand, model, price, availiability, sizeInInchs);
 		this.ramMemoryInGb = ramMemoryInGb;
 		this.processor = processor;
 		this.hardDiskType = hardDiskType;
@@ -60,12 +58,12 @@ public class Computer extends Product {
 		this.hardDiskCapacity = hardDiskCapacity;
 	}
 
-	public ComputerBrands getBrand() {
-		return brand;
-	}
-
-	public void setBrand(ComputerBrands brand) {
-		this.brand = brand;
+	@Override
+	public String toString() {
+		return "Computer [ramMemoryInGb=" + ramMemoryInGb + ", processor=" + processor + ", hardDiskType="
+				+ hardDiskType + ", hardDiskCapacity=" + hardDiskCapacity + ", brand=" + brand + ", model=" + model
+				+ ", priceInUSD=" + priceInUSD + ", availiability=" + availiability + ", sizeInInchs=" + sizeInInchs
+				+ "]";
 	}
 
 }
