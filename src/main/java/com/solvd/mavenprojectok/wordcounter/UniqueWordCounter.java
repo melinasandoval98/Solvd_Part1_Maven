@@ -64,7 +64,7 @@ public class UniqueWordCounter {
 		}
 	}
 
-	public static File createNewFile(String fileName, String path) throws IOException {
+	public static File createNewFile(String fileName, String path) {
 		File newFile = new File(path + fileName);
 		return newFile;
 	}
