@@ -6,14 +6,14 @@ import org.apache.commons.lang3.time.DateUtils;
 import com.solvd.mavenprojectok.onlineshopping.paymentmethod.PaymentMethod;
 
 public abstract class Person {
-	public String name;
-	public String surname;
-	public int iD;
-	public String nationality;
-	public Adress adress;
-	public Date dateOfBirth;
-	public Gender gender;
-	public PhoneNumber phoneNumber;
+	protected String name;
+	protected String surname;
+	protected int iD;
+	protected String nationality;
+	protected Adress adress;
+	protected Date dateOfBirth;
+	protected Gender gender;
+	protected PhoneNumber phoneNumber;
 
 	public Person() {
 
@@ -93,7 +93,7 @@ public abstract class Person {
 	public void setAdress(Adress adress) {
 		this.adress = adress;
 	}
-	
+
 	public abstract void createWallet(PaymentMethod pMethod);
 
 	@Override

@@ -68,12 +68,13 @@ public class Transaction<T extends PaymentMethod> {
 	}
 
 	public void getTransactionTicket() {
-		LOGGER.info("------------------------------");
-		LOGGER.info("THANK YOU FOR BUY OUR PRODUCTS");
-		LOGGER.info("------------------------------");
-		LOGGER.info("Transaction details:");
+		LOGGER.info("---------------------------------");
+		LOGGER.info("THANK YOU FOR BUYING OUR PRODUCTS");
+		LOGGER.info("---------------------------------");
+		LOGGER.info("_______Transaction details_______");
 		LOGGER.info("Total: " + totalAmountOfMoney);
-		LOGGER.info("Costumer: " + chosenPaymentMethod.holder.name + " " + chosenPaymentMethod.holder.surname);
+		LOGGER.info(
+				"Costumer: " + chosenPaymentMethod.holder.getName() + " " + chosenPaymentMethod.holder.getSurname());
 		LOGGER.info("Paid with " + chosenPaymentMethod);
 		LOGGER.info("------------------------------");
 	}
