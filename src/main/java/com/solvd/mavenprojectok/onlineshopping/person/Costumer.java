@@ -8,14 +8,13 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.solvd.mavenprojectok.onlineshopping.catalog.Catalog;
 import com.solvd.mavenprojectok.onlineshopping.catalog.ISearchable;
 import com.solvd.mavenprojectok.onlineshopping.catalog.Products;
 import com.solvd.mavenprojectok.onlineshopping.exception.ProductNotFoundException;
 import com.solvd.mavenprojectok.onlineshopping.paymentmethod.PaymentMethod;
 
 public class Costumer extends Person {
-	public static final Logger LOGGER = LogManager.getLogger(Catalog.class);
+	public static final Logger LOGGER = LogManager.getLogger(Costumer.class);
 	private UserAccount userAccount;
 	private List<PaymentMethod> wallet = new ArrayList<PaymentMethod>();
 

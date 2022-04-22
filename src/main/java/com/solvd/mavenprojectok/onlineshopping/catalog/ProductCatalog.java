@@ -9,7 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ProductCatalog<T extends Product> {
-	public static final Logger LOGGER = LogManager.getLogger(Catalog.class);
+	public static final Logger LOGGER = LogManager.getLogger(ProductCatalog.class);
 	private LinkedHashSet<T> listOfProductsForSale = new LinkedHashSet<T>();
 	public static int numberOfCatalogsCreated;
 
