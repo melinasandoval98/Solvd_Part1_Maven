@@ -119,32 +119,32 @@ public class OnlineStoreRunner {
 		// Shopping
 		ISearchable searchable = (stringArray, string) -> Arrays.asList(stringArray).contains(string.toLowerCase());
 		costumerBeatriceJenkins.findProductTypeByKeyword(searchable, fullCatalog, "computers");
-
 		BiFunction<LinkedHashSet<Computer>, String, List<Computer>> filterComputerByBrand = (set, brand) -> set.stream()
 				.filter(computer -> computer.getBrand().equals(brand)).collect(Collectors.toList());
 		computerCatalog.fillterProductByBrand(filterComputerByBrand, ComputerBrands.ACER.getBrandName());
 		cart.addProductToCart(computerAcerSpin);
 
+		costumerBeatriceJenkins.findProductTypeByKeyword(searchable, fullCatalog, "SMART phones");
 		BiFunction<LinkedHashSet<SmartPhone>, String, List<SmartPhone>> filterSmartPhoneByBrand = (set, brand) -> set
 				.stream().filter(smartPhone -> smartPhone.getBrand().equals(brand)).collect(Collectors.toList());
 		smartPhoneCatalog.fillterProductByBrand(filterSmartPhoneByBrand, SmartPhoneBrands.I_PHONE.getBrandName());
 		cart.addProductToCart(smartPhoneIphone13Pro);
 
+		costumerBeatriceJenkins.findProductTypeByKeyword(searchable, fullCatalog, "camera");
+
+		costumerBeatriceJenkins.findProductTypeByKeyword(searchable, fullCatalog, "smartTV");
 		BiFunction<LinkedHashSet<SmartTV>, String, List<SmartTV>> filterSmartTVByBrand = (set, brand) -> set.stream()
 				.filter(smartTV -> smartTV.getBrand().equals(brand)).collect(Collectors.toList());
 		smartTVCatalog.fillterProductByBrand(filterSmartTVByBrand, SmartTVBrands.PHILIPS.getBrandName());
 		cart.addProductToCart(smartTVPhilips);
-
 		cart.showProductsInTheCart();
 
 		// The consumer buys some products and causes the decrease in the quantity
 		// available of each one
 		Consumer<LinkedList<Computer>> sellComputersInTheCart = (listOfComputers) -> listOfComputers.stream()
 				.forEach((product) -> product.setAvailiability(product.getAvailiability() - 1));
-
 		Consumer<LinkedList<SmartPhone>> sellSmartPhonesInTheCart = (listOfSmartPhones) -> listOfSmartPhones.stream()
 				.forEach((smartPhone) -> smartPhone.setAvailiability(smartPhone.getAvailiability() - 1));
-
 		Consumer<LinkedList<SmartTV>> sellSmartTVsInTheCart = (listOfSmartTVs) -> listOfSmartTVs.stream()
 				.forEach((smartTV) -> smartTV.setAvailiability(smartTV.getAvailiability() - 1));
 
@@ -152,11 +152,12 @@ public class OnlineStoreRunner {
 		transaction.sellProducts(cart, sellComputersInTheCart, sellSmartPhonesInTheCart, sellSmartTVsInTheCart);
 
 		// The Costumer pays with a certain payment method
-		BiPredicate<Double, Double> sufficientBalance = (totalToPay, balance) -> balance > totalToPay;
+		BiPredicate<Double, Double> sufficientBalance = (totalToPay, balance) -> balance >= totalToPay;
 		IBuy<BankAccount> payWithBankAccount = (totalToPay, bankAccount) -> bankAccount
 				.setAvailableBalance(bankAccount.getAvailableBalance() - totalToPay);
+
 		transaction.pay(sufficientBalance, payWithBankAccount);
 		transaction.getTransactionTicket();
-		LOGGER.info("Bye!");
+		costumerBeatriceJenkins.getUserAccount().logOut();
 	}
 }

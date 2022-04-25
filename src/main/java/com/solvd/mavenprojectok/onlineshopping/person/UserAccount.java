@@ -2,6 +2,8 @@ package com.solvd.mavenprojectok.onlineshopping.person;
 
 import org.apache.logging.log4j.Logger;
 
+import com.solvd.mavenprojectok.onlineshopping.exception.IncorrectUsserNameOrPasswordException;
+
 import java.util.HashMap;
 
 import org.apache.logging.log4j.LogManager;
@@ -42,20 +44,34 @@ public class UserAccount implements IAccessable {
 		this.password = password;
 	}
 
-	@Override
-	public String logIn(IVerifyable verifayable) {
+	private void logInAccount(IVerifyable verifayable) throws IncorrectUsserNameOrPasswordException {
 		if (status == false) {
 			status = verifayable.verify(MapOfUserNamesAndPasswords, userName, password);
+			LOGGER.info("Hello, " + userName + "!");
+		} else {
+			throw new IncorrectUsserNameOrPasswordException();
 		}
-		return "Successful Login";
 	}
 
 	@Override
-	public String logOut() {
+	public void logIn(IVerifyable verifayable) {
+		while (true) {
+			try {
+				logInAccount(verifayable);
+				break;
+			} catch (IncorrectUsserNameOrPasswordException e) {
+				LOGGER.error("Wrong user name or passwor, please try again");
+				continue;
+			}
+		}
+	}
+
+	@Override
+	public void logOut() {
 		if (status) {
 			status = false;
+			LOGGER.info("Bye!");
 		}
-		return "Bye!";
 	}
 
 	@Override

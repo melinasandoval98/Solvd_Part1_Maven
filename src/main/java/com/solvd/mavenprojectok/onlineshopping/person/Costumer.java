@@ -40,28 +40,26 @@ public class Costumer extends Person {
 		return wallet;
 	}
 
-	private Object searchProductTypeByKeyword(ISearchable searchable, Object[][] fullCatalog, String pattern)
+	private void searchProductTypeByKeyword(ISearchable searchable, Object[][] fullCatalog, String pattern)
 			throws ProductNotFoundException {
 		Integer row = null;
 		for (Products product : Products.values()) {
 			if (searchable.search(product.getKeywords(), pattern.toLowerCase())) {
 				row = ArrayUtils.indexOf(fullCatalog[0], product);
+				LOGGER.info("Search results for '" + pattern + "'\n" + fullCatalog[1][row] + "\n");
 				break;
-			} else {
-				throw new ProductNotFoundException();
 			}
 		}
-		return fullCatalog[1][row];
+		if (row == null) {
+			throw new ProductNotFoundException();
+		}
 	}
 
-	public Object findProductTypeByKeyword(ISearchable searchable, Object[][] fullCatalog, String pattern) {
-		while (true) {
-			try {
-				return searchProductTypeByKeyword(searchable, fullCatalog, pattern);
-			} catch (ProductNotFoundException e) {
-				LOGGER.error("No products have been found with that name", e);
-				continue;
-			}
+	public void findProductTypeByKeyword(ISearchable searchable, Object[][] fullCatalog, String pattern) {
+		try {
+			searchProductTypeByKeyword(searchable, fullCatalog, pattern);
+		} catch (ProductNotFoundException e) {
+			LOGGER.error("No products have been found for the keyword '" + pattern + "'", e);
 		}
 	}
 

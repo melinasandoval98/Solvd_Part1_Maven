@@ -2,8 +2,8 @@ package com.solvd.mavenprojectok.onlineshopping.person;
 
 public interface IAccessable {
 
-	public abstract String logIn(IVerifyable verifyable);
+	public abstract void logIn(IVerifyable verifyable);
 
-	public abstract String logOut();
+	public abstract void logOut();
 
 }

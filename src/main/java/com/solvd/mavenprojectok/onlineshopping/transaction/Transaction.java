@@ -76,7 +76,7 @@ public class Transaction<T extends PaymentMethod> {
 		LOGGER.info(
 				"Costumer: " + chosenPaymentMethod.holder.getName() + " " + chosenPaymentMethod.holder.getSurname());
 		LOGGER.info("Paid with " + chosenPaymentMethod);
-		LOGGER.info("------------------------------");
+		LOGGER.info("_________________________________");
 	}
 
 }

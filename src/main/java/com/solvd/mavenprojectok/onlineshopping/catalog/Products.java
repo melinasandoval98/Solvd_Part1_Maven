@@ -1,7 +1,8 @@
 package com.solvd.mavenprojectok.onlineshopping.catalog;
 
 public enum Products {
-	COMPUTER("computer", "computers"), SMART_TV("smart phone", "smartphone"), SMART_PHONE("smarttv", "smart tv");
+	COMPUTER("computer", "computers"), SMART_TV("smart phone", "smartphone", "smart phones"),
+	SMART_PHONE("smarttv", "smart tv");
 
 	private String[] keywords;
 

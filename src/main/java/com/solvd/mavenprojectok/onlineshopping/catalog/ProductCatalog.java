@@ -34,7 +34,7 @@ public class ProductCatalog<T extends Product> {
 	}
 
 	public void fillterProductByBrand(BiFunction<LinkedHashSet<T>, String, List<T>> filterByBrand, String brand) {
-		LOGGER.info("Results of the search: " + brand);
+		LOGGER.info("Search results: " + brand);
 		LOGGER.info("---------------------------------------------------");
 		LOGGER.info("BRAND\tMODEL\t\tSIZE(inch)\tPRICE(USD)");
 		LOGGER.info("---------------------------------------------------");
