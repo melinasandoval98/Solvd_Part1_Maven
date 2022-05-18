@@ -2,11 +2,18 @@ package com.solvd.mavenprojectok.onlineshopping.person;
 
 public class PhoneNumber {
 	private int countryCode;
-	private Integer number;
+	private Integer middleNumber;
 	private long phoneNumber;
 
 	public int getCountryCode() {
 		return countryCode;
+	}
+
+	public PhoneNumber(int countryCode, Integer number, long phoneNumber) {
+		super();
+		this.countryCode = countryCode;
+		this.middleNumber = number;
+		this.phoneNumber = phoneNumber;
 	}
 
 	public void setCountryCode(int countryCode) {
@@ -14,11 +21,11 @@ public class PhoneNumber {
 	}
 
 	public Integer getNumber() {
-		return number;
+		return middleNumber;
 	}
 
 	public void setNumber(Integer number) {
-		this.number = number;
+		this.middleNumber = number;
 	}
 
 	public long getPhoneNumber() {
@@ -29,16 +36,10 @@ public class PhoneNumber {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public PhoneNumber(int countryCode, Integer number, long phoneNumber) {
-		super();
-		this.countryCode = countryCode;
-		this.number = number;
-		this.phoneNumber = phoneNumber;
-	}
-
 	@Override
 	public String toString() {
-		return "(" + countryCode + ") " + number + " " + phoneNumber;
+		return middleNumber != null ? "(" + countryCode + ") " + middleNumber + " " + phoneNumber
+				: "(" + countryCode + ") " + " " + phoneNumber;
 	}
 
 }

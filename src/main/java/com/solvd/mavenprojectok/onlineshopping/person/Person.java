@@ -19,13 +19,15 @@ public abstract class Person {
 
 	}
 
-	public Person(String name, String surname, int iD, Adress adress, Date dateOfBirth, Gender gender) {
+	public Person(String name, String surname, int iD, Adress adress, Date dateOfBirth, Gender gender,
+			PhoneNumber phoneNumber) {
 		this.name = name;
 		this.surname = surname;
 		this.iD = iD;
 		this.setAdress(adress);
 		this.dateOfBirth = dateOfBirth;
 		this.gender = gender;
+		this.phoneNumber = phoneNumber;
 	}
 
 	public String getName() {

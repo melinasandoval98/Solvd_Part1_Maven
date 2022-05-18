@@ -7,6 +7,9 @@ public class Product {
 	public int availiability;
 	public double sizeInInchs;
 
+	public Product() {
+	}
+
 	public Product(String brand, String model, double price, int availiability, double sizeInInchs) {
 		this.brand = brand;
 		this.model = model;
@@ -53,9 +56,6 @@ public class Product {
 
 	public void setSizeInInchs(double sizeInInchs) {
 		this.sizeInInchs = sizeInInchs;
-	}
-
-	public Product() {
 	}
 
 	@Override

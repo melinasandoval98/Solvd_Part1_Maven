@@ -3,10 +3,12 @@ package com.solvd.mavenprojectok.onlineshopping.runner;
 import org.apache.logging.log4j.Logger;
 
 import com.solvd.mavenprojectok.onlineshopping.cart.Cart;
+import com.solvd.mavenprojectok.onlineshopping.cart.CustomLinkedList;
 import com.solvd.mavenprojectok.onlineshopping.catalog.Computer;
 import com.solvd.mavenprojectok.onlineshopping.catalog.ComputerBrands;
 import com.solvd.mavenprojectok.onlineshopping.catalog.ISearchable;
 import com.solvd.mavenprojectok.onlineshopping.catalog.ProductCatalog;
+import com.solvd.mavenprojectok.onlineshopping.catalog.ProductStorage;
 import com.solvd.mavenprojectok.onlineshopping.catalog.Products;
 import com.solvd.mavenprojectok.onlineshopping.catalog.SmartPhone;
 import com.solvd.mavenprojectok.onlineshopping.catalog.SmartPhoneBrands;
@@ -18,6 +20,7 @@ import com.solvd.mavenprojectok.onlineshopping.person.Adress;
 import com.solvd.mavenprojectok.onlineshopping.person.Costumer;
 import com.solvd.mavenprojectok.onlineshopping.person.Gender;
 import com.solvd.mavenprojectok.onlineshopping.person.IVerifyable;
+import com.solvd.mavenprojectok.onlineshopping.person.PhoneNumber;
 import com.solvd.mavenprojectok.onlineshopping.person.UserAccount;
 import com.solvd.mavenprojectok.onlineshopping.transaction.IBuy;
 import com.solvd.mavenprojectok.onlineshopping.transaction.Transaction;
@@ -25,7 +28,6 @@ import com.solvd.mavenprojectok.onlineshopping.transaction.Transaction;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.LinkedHashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.BiPredicate;
@@ -42,13 +44,10 @@ public class OnlineStoreRunner {
 		ProductCatalog<Computer> computerCatalog = new ProductCatalog<Computer>();
 		ProductCatalog<SmartPhone> smartPhoneCatalog = new ProductCatalog<SmartPhone>();
 		ProductCatalog<SmartTV> smartTVCatalog = new ProductCatalog<SmartTV>();
-		Object[][] fullCatalog = new Object[2][ProductCatalog.numberOfCatalogsCreated];
-		fullCatalog[0][0] = Products.COMPUTER;
-		fullCatalog[1][0] = computerCatalog;
-		fullCatalog[0][1] = Products.SMART_PHONE;
-		fullCatalog[1][1] = smartTVCatalog;
-		fullCatalog[0][2] = Products.SMART_TV;
-		fullCatalog[1][2] = smartTVCatalog;
+		ProductStorage productStorage = new ProductStorage();
+		productStorage.getFullCatalog().put(Products.COMPUTER, computerCatalog);
+		productStorage.getFullCatalog().put(Products.SMART_PHONE, smartTVCatalog);
+		productStorage.getFullCatalog().put(Products.SMART_TV, smartTVCatalog);
 
 		Computer computerLenovoIdeaPad = new Computer(ComputerBrands.LENOVO.getBrandName(), "IdeaPad\t", 4500.99, 100,
 				14, 4, "Intel Core i5-1035G1", "SSD", "250 GB");
@@ -89,7 +88,7 @@ public class OnlineStoreRunner {
 		// Costumer Creation
 		Costumer costumerBeatriceJenkins = new Costumer("Beatrice", "Jenkins", 23124884,
 				new Adress(42, "Wallaby Way", "Sydney", "Australia"), new Date(), Gender.FEMALE,
-				new UserAccount("beatriceJenkins09", "difficultPassword"));
+				new PhoneNumber(02, null, 98765432), new UserAccount("beatriceJenkins09", "difficultPassword"));
 		BankAccount bankAccountBJ = new BankAccount(costumerBeatriceJenkins, 14029.55, 1329840999);
 		CreditCard creditCardBJ = new CreditCard(costumerBeatriceJenkins, 3725.6, 1924197515, 583);
 		costumerBeatriceJenkins.createWallet(bankAccountBJ);
@@ -118,21 +117,21 @@ public class OnlineStoreRunner {
 
 		// Shopping
 		ISearchable searchable = (stringArray, string) -> Arrays.asList(stringArray).contains(string.toLowerCase());
-		costumerBeatriceJenkins.findProductTypeByKeyword(searchable, fullCatalog, "computers");
+		productStorage.findProductTypeByKeyword(searchable, "computers");
 		BiFunction<LinkedHashSet<Computer>, String, List<Computer>> filterComputerByBrand = (set, brand) -> set.stream()
 				.filter(computer -> computer.getBrand().equals(brand)).collect(Collectors.toList());
 		computerCatalog.fillterProductByBrand(filterComputerByBrand, ComputerBrands.ACER.getBrandName());
 		cart.addProductToCart(computerAcerSpin);
 
-		costumerBeatriceJenkins.findProductTypeByKeyword(searchable, fullCatalog, "SMART phones");
+		productStorage.findProductTypeByKeyword(searchable, "SMART phones");
 		BiFunction<LinkedHashSet<SmartPhone>, String, List<SmartPhone>> filterSmartPhoneByBrand = (set, brand) -> set
 				.stream().filter(smartPhone -> smartPhone.getBrand().equals(brand)).collect(Collectors.toList());
 		smartPhoneCatalog.fillterProductByBrand(filterSmartPhoneByBrand, SmartPhoneBrands.I_PHONE.getBrandName());
 		cart.addProductToCart(smartPhoneIphone13Pro);
 
-		costumerBeatriceJenkins.findProductTypeByKeyword(searchable, fullCatalog, "camera");
+		productStorage.findProductTypeByKeyword(searchable, "camera");
 
-		costumerBeatriceJenkins.findProductTypeByKeyword(searchable, fullCatalog, "smartTV");
+		productStorage.findProductTypeByKeyword(searchable, "smartTV");
 		BiFunction<LinkedHashSet<SmartTV>, String, List<SmartTV>> filterSmartTVByBrand = (set, brand) -> set.stream()
 				.filter(smartTV -> smartTV.getBrand().equals(brand)).collect(Collectors.toList());
 		smartTVCatalog.fillterProductByBrand(filterSmartTVByBrand, SmartTVBrands.PHILIPS.getBrandName());
@@ -141,12 +140,13 @@ public class OnlineStoreRunner {
 
 		// The consumer buys some products and causes the decrease in the quantity
 		// available of each one
-		Consumer<LinkedList<Computer>> sellComputersInTheCart = (listOfComputers) -> listOfComputers.stream()
-				.forEach((product) -> product.setAvailiability(product.getAvailiability() - 1));
-		Consumer<LinkedList<SmartPhone>> sellSmartPhonesInTheCart = (listOfSmartPhones) -> listOfSmartPhones.stream()
-				.forEach((smartPhone) -> smartPhone.setAvailiability(smartPhone.getAvailiability() - 1));
-		Consumer<LinkedList<SmartTV>> sellSmartTVsInTheCart = (listOfSmartTVs) -> listOfSmartTVs.stream()
-				.forEach((smartTV) -> smartTV.setAvailiability(smartTV.getAvailiability() - 1));
+		Consumer<CustomLinkedList<Computer>> sellComputersInTheCart = (listOfComputers) -> listOfComputers.stream()
+				.forEach((product) -> product.getData().setAvailiability(product.getData().getAvailiability() - 1));
+		Consumer<CustomLinkedList<SmartPhone>> sellSmartPhonesInTheCart = (listOfSmartPhones) -> listOfSmartPhones
+				.stream().forEach((smartPhone) -> smartPhone.getData()
+						.setAvailiability(smartPhone.getData().getAvailiability() - 1));
+		Consumer<CustomLinkedList<SmartTV>> sellSmartTVsInTheCart = (listOfSmartTVs) -> listOfSmartTVs.stream()
+				.forEach((smartTV) -> smartTV.getData().setAvailiability(smartTV.getData().getAvailiability() - 1));
 
 		Transaction<BankAccount> transaction = new Transaction<BankAccount>(cart.getAccumulatedPrice(), bankAccountBJ);
 		transaction.sellProducts(cart, sellComputersInTheCart, sellSmartPhonesInTheCart, sellSmartTVsInTheCart);
@@ -157,7 +157,8 @@ public class OnlineStoreRunner {
 				.setAvailableBalance(bankAccount.getAvailableBalance() - totalToPay);
 
 		transaction.pay(sufficientBalance, payWithBankAccount);
-		transaction.getTransactionTicket();
+		Date dateAndTimeOfTransaction = new Date();
+		transaction.getTransactionTicket(dateAndTimeOfTransaction);
 		costumerBeatriceJenkins.getUserAccount().logOut();
 	}
 }

@@ -7,26 +7,24 @@ import com.solvd.mavenprojectok.onlineshopping.catalog.SmartPhone;
 import com.solvd.mavenprojectok.onlineshopping.catalog.SmartTV;
 import com.solvd.mavenprojectok.onlineshopping.exception.ProductNotAvilableException;
 
-import java.util.LinkedList;
-
 import org.apache.logging.log4j.LogManager;
 
 public class Cart {
 	public static final Logger LOGGER = LogManager.getLogger(Cart.class);
-	private LinkedList<Computer> computersInTheCart = new LinkedList<Computer>();
-	private LinkedList<SmartPhone> smartPhonesInTheCart = new LinkedList<SmartPhone>();
-	private LinkedList<SmartTV> smartTVsInTheCart = new LinkedList<SmartTV>();
+	private CustomLinkedList<Computer> computersInTheCart = new CustomLinkedList<Computer>();
+	private CustomLinkedList<SmartPhone> smartPhonesInTheCart = new CustomLinkedList<SmartPhone>();
+	private CustomLinkedList<SmartTV> smartTVsInTheCart = new CustomLinkedList<SmartTV>();
 	private double accumulatedPrice = 0;
 
-	public LinkedList<Computer> getComputersInTheCart() {
+	public CustomLinkedList<Computer> getComputersInTheCart() {
 		return computersInTheCart;
 	}
 
-	public LinkedList<SmartPhone> getSmartPhonesInTheCart() {
+	public CustomLinkedList<SmartPhone> getSmartPhonesInTheCart() {
 		return smartPhonesInTheCart;
 	}
 
-	public LinkedList<SmartTV> getSmartTVsInTheCart() {
+	public CustomLinkedList<SmartTV> getSmartTVsInTheCart() {
 		return smartTVsInTheCart;
 	}
 
@@ -36,7 +34,7 @@ public class Cart {
 
 	public void addComputerToTheCart(Computer computer) throws ProductNotAvilableException {
 		if (computer.availiability > 0) {
-			computersInTheCart.add(computer);
+			computersInTheCart.insert(computer);
 			accumulatedPrice += computer.priceInUSD;
 		} else {
 			throw new ProductNotAvilableException();
@@ -53,7 +51,7 @@ public class Cart {
 
 	public void addSmartPhoneToTheCart(SmartPhone smartPhone) throws ProductNotAvilableException {
 		if (smartPhone.availiability > 0) {
-			smartPhonesInTheCart.add(smartPhone);
+			smartPhonesInTheCart.insert(smartPhone);
 			accumulatedPrice += smartPhone.priceInUSD;
 		} else {
 			throw new ProductNotAvilableException();
@@ -70,7 +68,7 @@ public class Cart {
 
 	public void addSmartTVToTheCart(SmartTV smartTV) throws ProductNotAvilableException {
 		if (smartTV.availiability > 0) {
-			smartTVsInTheCart.add(smartTV);
+			smartTVsInTheCart.insert(smartTV);
 			accumulatedPrice += smartTV.priceInUSD;
 		} else {
 			throw new ProductNotAvilableException();
@@ -90,12 +88,12 @@ public class Cart {
 		LOGGER.info("--------------------------------------");
 		LOGGER.info("BRAND\tMODEL\t\tPRICE(USD)");
 		LOGGER.info("--------------------------------------");
-		computersInTheCart.stream().forEach(computer -> LOGGER
-				.info(computer.getBrand() + "\t" + computer.getModel() + "\t" + computer.getPriceInUSD()));
-		smartPhonesInTheCart.stream().forEach(smartPhone -> LOGGER
-				.info(smartPhone.getBrand() + "\t" + smartPhone.getModel() + "\t" + smartPhone.getPriceInUSD()));
-		smartTVsInTheCart.stream().forEach(smartTV -> LOGGER
-				.info(smartTV.getBrand() + "\t" + smartTV.getModel() + "\t" + smartTV.getPriceInUSD()));
+		computersInTheCart.stream().forEach(computer -> LOGGER.info(computer.getData().getBrand() + "\t"
+				+ computer.getData().getModel() + "\t" + computer.getData().getPriceInUSD()));
+		smartPhonesInTheCart.stream().forEach(smartPhone -> LOGGER.info(smartPhone.getData().getBrand() + "\t"
+				+ smartPhone.getData().getModel() + "\t" + smartPhone.getData().getPriceInUSD()));
+		smartTVsInTheCart.stream().forEach(smartTV -> LOGGER.info(smartTV.getData().getBrand() + "\t"
+				+ smartTV.getData().getModel() + "\t" + smartTV.getData().getPriceInUSD()));
 		LOGGER.info("--------------------------------------");
 		LOGGER.info("Accumulated Price: " + accumulatedPrice + " USD\n");
 	}
